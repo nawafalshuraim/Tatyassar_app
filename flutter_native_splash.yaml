@@ -1,0 +1,18 @@
+flutter_native_splash:
+  # General (for Android <12, iOS, and Web)
+  color: "#FFFFFF"
+  color_dark: "#000000"
+
+  image: assets/logos/3dicons-bulb-dark.png
+  image_dark: assets/logos/3dicons-bulb-light.png
+
+  android_12:
+    # Android 12+ specific
+    color: "#FFFFFF"
+    color_dark: "#000000"
+
+    image: assets/logos/3dicons-bulb-dark.png
+    image_dark: assets/logos/3dicons-bulb-light.png
+
+  web: true
+  fullscreen: true

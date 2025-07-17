@@ -1,0 +1,30 @@
+import 'package:flutter/material.dart';
+import 'package:loom_store/features/authentication/controllers.onboarding/onboarder_controller.dart';
+import 'package:loom_store/utils/constants/colors.dart';
+import 'package:loom_store/utils/constants/sizes.dart';
+import 'package:loom_store/utils/device/device_utility.dart';
+import 'package:loom_store/utils/helpers/helper_functions.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+
+class OnBoardingDotNavigation extends StatelessWidget {
+  const OnBoardingDotNavigation({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    // this line calls Get.find();
+    final controller = OnBoardingController.instance;
+    //
+    final dark = CHelperFunctions.isDarkMode(context);
+    return Positioned(
+      bottom: CDeviceUtils.getBottomNavigationBarHeight() + 25,
+      left: CSizes.defaultSpace, 
+      child: SmoothPageIndicator(
+        count:3,
+        controller: controller.pageController,
+        onDotClicked: controller.dotNavigaationClick,
+
+        effect: ExpandingDotsEffect( activeDotColor: dark ? CColors.light: CColors.dark,dotHeight: 6),
+      ),
+    );
+  }
+}
