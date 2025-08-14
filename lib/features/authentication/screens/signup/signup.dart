@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_utils/get_utils.dart';
-import 'package:loom_store/common/widgets/login_signup/login_signup/login_form_divider.dart';
-import 'package:loom_store/common/widgets/login_signup/login_signup/login_form_footer.dart';
+import 'package:loom_store/common/widgets/appbar/appbar.dart';
+import 'package:loom_store/common/widgets/login_signup/login_signup/social_button.dart';
+import 'package:loom_store/common/widgets/login_signup/login_signup/signup_form_divider.dart';
 import 'package:loom_store/features/authentication/screens/signup/widgets/signup_form.dart';
 import 'package:loom_store/utils/constants/sizes.dart';
 import 'package:loom_store/utils/constants/text_strings.dart';
@@ -12,7 +13,9 @@ class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: CAppBar(
+        showBackArrow: true,
+       ),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(CSizes.defaultSpace),
@@ -26,12 +29,12 @@ class SignUpScreen extends StatelessWidget {
               //form
                CSignUpForm(),
               // divider
-              CLoginDivider(dividerText: CTexts.orSignUpWith.capitalize!),
+              CSignUpDivider(dividerText: CTexts.orSignUpWith.capitalize!),
               SizedBox(height: CSizes.spaceBtwSections),
 
 
               // footer
-              CLoginFooter(),
+              CSocialButton(),
               SizedBox(height: CSizes.spaceBtwSections),
 
 

@@ -9,14 +9,16 @@ class OrderScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      /// -- AppBar
-      appBar: CAppBar(title: Text('My Orders', style: Theme.of(context).textTheme.headlineSmall),showBackArrow: false,),
+      appBar: CAppBar(
+        title:
+            Text('My Orders', style: Theme.of(context).textTheme.headlineSmall),
+        showBackArrow: false,
+      ),
       body: const Padding(
         padding: EdgeInsets.all(CSizes.defaultSpace),
-        
-        
         child: COrderListItems(),
-      ), 
-    ); 
+      ),
+    );
   }
 }
+

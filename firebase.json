@@ -1,0 +1,31 @@
+{
+    "flutter": {
+        "platforms": {
+            "android": {
+                "default": {
+                    "projectId": "leanfix-store",
+                    "appId": "1:518508507331:android:5e49b005f267934630f276",
+                    "fileOutput": "android/app/google-services.json"
+                }
+            },
+            "ios": {
+                "default": {
+                    "projectId": "leanfix-store",
+                    "appId": "1:518508507331:ios:9de6a5aa29c9e02430f276",
+                    "uploadDebugSymbols": false,
+                    "fileOutput": "ios/Runner/GoogleService-Info.plist"
+                }
+            },
+            "dart": {
+                "lib/firebase_options.dart": {
+                    "projectId": "leanfix-store",
+                    "configurations": {
+                        "android": "1:518508507331:android:5e49b005f267934630f276",
+                        "ios": "1:518508507331:ios:9de6a5aa29c9e02430f276",
+                        "web": "1:518508507331:web:7cd183fbe747369130f276"
+                    }
+                }
+            }
+        }
+    }
+}

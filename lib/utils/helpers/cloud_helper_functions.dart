@@ -2,9 +2,9 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-
+ 
 /// Helper functions for cloud-related operations.
-class TCloudHelperFunctions {
+class CCloudHelperFunctions {
 
   /// Helper function to check the state of a single database record.
   ///

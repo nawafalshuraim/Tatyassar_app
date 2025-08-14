@@ -6,6 +6,7 @@ import 'package:loom_store/common/widgets/custom_shapes/containers/primary_heade
 import 'package:loom_store/common/widgets/list_tiles/settings_menu_tile.dart';
 import 'package:loom_store/common/widgets/list_tiles/user_profile_tile.dart';
 import 'package:loom_store/common/widgets/texts/section_heading.dart';
+import 'package:loom_store/data/repositories/authentication/authentication_repository.dart';
 import 'package:loom_store/features/personalization/screens/address/address.dart';
 import 'package:loom_store/features/personalization/screens/profile/profile.dart';
 import 'package:loom_store/utils/constants/colors.dart';
@@ -35,8 +36,9 @@ class SettingsScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: CSizes.spaceBtwSections),
 
-                  // user profile card
-                  CUserProfileTile(onPressed: () => Get.to(() => const ProfileScreen())),
+                  // user profile tile
+                  CUserProfileTile(
+                      onPressed: () => Get.to(() => const ProfileScreen())),
                   const SizedBox(height: CSizes.spaceBtwSections),
                 ],
               ),
@@ -53,31 +55,17 @@ class SettingsScreen extends StatelessWidget {
                   const SizedBox(height: CSizes.spaceBtwItems),
 
                   CSettingsMenuTile(
-                    icon: Iconsax.safe_home,
+                    icon: Iconsax.location,
                     title: 'My Addresses',
-                    subTitle: 'Set shopping delivery address',
-                    onTap: ()=> Get.to(()=> const UserAddressScreen()) ,
+                    subTitle: 'Where you want to recieve your service',
+                    onTap: () => Get.to(() => const UserAddressScreen()),
                   ),
-                  // const CSettingsMenuTile(
-                  //   icon: Iconsax.shopping_cart,
-                  //   title: 'My Cart',
-                  //   subTitle: 'Add, remove services and move to checkout',
-                  // ),
-                  // const CSettingsMenuTile(
-                  //   icon: Iconsax.bag_tick,
-                  //   title: 'My Orders',
-                  //   subTitle: 'In-progress and Completed Orders',
-                  // ),
                   const CSettingsMenuTile(
-                    icon: Iconsax.bank,
+                    icon: Iconsax.card,
                     title: 'Bank Account',
                     subTitle: 'Withdraw balance to registered bank account',
                   ),
-                  // const CSettingsMenuTile(
-                  //   icon: Iconsax.discount_shape,
-                  //   title: 'My Coupons',
-                  //   subTitle: 'List of all the discounted coupons',
-                  // ),
+
                   const CSettingsMenuTile(
                     icon: Iconsax.notification,
                     title: 'Notifications',
@@ -99,25 +87,16 @@ class SettingsScreen extends StatelessWidget {
                     title: 'Load Data',
                     subTitle: 'Upload Data to your Cloud Firebase',
                   ),
-                  CSettingsMenuTile(
-                    icon: Iconsax.location,
-                    title: 'Geolocation',
-                    subTitle: 'Set recommendation based on location',
-                    trailing: Switch(value: true, onChanged: (value) {}),
-                  ),
-                  CSettingsMenuTile(
-                    icon: Iconsax.security_user,
-                    title: 'Safe Mode',
-                    subTitle: 'Search result is safe for all ages',
-                    trailing: Switch(value: false, onChanged: (value) {}),
-                  ),
 
                   /// Logout Button
                   const SizedBox(height: CSizes.spaceBtwSections),
                   SizedBox(
                     width: double.infinity,
                     child: OutlinedButton(
-                        onPressed: () {}, child: const Text('Logout')),
+                        onPressed: () async {
+                          await AuthenticationRepository.instance.logout();
+                        },
+                        child: const Text('Logout')),
                   ), // Size
                 ],
               ),

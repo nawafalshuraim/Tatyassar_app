@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:loom_store/common/products/checkout_cart/cart_menu_icon.dart';
 import 'package:loom_store/common/widgets/appbar/appbar.dart';
-//import 'package:loom_store/common/products/cart/cart_menu_icon.dart';
+import 'package:loom_store/common/widgets/shimmer/shimmer.dart';
+import 'package:loom_store/features/personalization/controllers/user_controller.dart';
+import 'package:loom_store/features/shop/screens/cart/cart.dart';
 import 'package:loom_store/utils/constants/colors.dart';
 import 'package:loom_store/utils/constants/text_strings.dart';
 
@@ -11,23 +16,35 @@ class CHomeAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(UserController());
     return CAppBar(
       title: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             CTexts.homeAppbarTitle,
-            style: Theme.of(context).textTheme.labelMedium!.apply(color: CColors.grey),
+            style: Theme.of(context)
+                .textTheme
+                .labelMedium!
+                .apply(color: CColors.grey),
           ),
-          Text(
-            CTexts.homeAppbarSubTitle,
-            style: Theme.of(context).textTheme.headlineSmall!.apply(color: CColors.white),
-          ),
+          Obx(() {
+            if (controller.profileLoading.value) {
+              return const CShimmerEffect(width: 80, height: 15);
+            } else {
+              return Text(
+                controller.user.value.fullName,
+                style: Theme.of(context).textTheme.headlineSmall!.apply(
+                      color: CColors.white,
+                    ),
+              );
+            }
+          }),
         ],
       ),
-      // actions: [
-      //   CCartCounterIcon(onPressed: () {  }, iconColor: CColors.white,),
-      // ],
+      actions: [
+        CCartCounterIcon(onPressed: () => CartScreen(), iconColor: CColors.white,),
+      ],
     );
   }
 }

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:loom_store/common/widgets/appbar/appbar.dart';
-import 'package:loom_store/common/widgets/custom_shapes/containers/circular_container.dart';
+import 'package:loom_store/common/widgets/shimmer/shimmer.dart';
 import 'package:loom_store/common/widgets/texts/section_heading.dart';
+import 'package:loom_store/features/personalization/controllers/user_controller.dart';
+import 'package:loom_store/features/personalization/screens/profile/widgets/change_name.dart';
 import 'package:loom_store/features/personalization/screens/profile/widgets/profile_menu.dart';
 import 'package:loom_store/utils/constants/image_strings.dart';
 import 'package:loom_store/utils/constants/sizes.dart';
@@ -12,7 +15,8 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    final controller = UserController.instance;
+    return Scaffold(
       appBar: CAppBar(
         title: Text('Profile'),
         showBackArrow: true,
@@ -20,7 +24,7 @@ class ProfileScreen extends StatelessWidget {
       //body
       body: SingleChildScrollView(
         child: Padding(
-          padding:EdgeInsets.all(CSizes.defaultSpace),
+          padding: EdgeInsets.all(CSizes.defaultSpace),
           child: Column(
             children: [
               //profile picture
@@ -28,49 +32,107 @@ class ProfileScreen extends StatelessWidget {
                 width: double.infinity,
                 child: Column(
                   children: [
-                    const CCircularContianer(image: CImages.user, width: 80, height: 80),
-                    TextButton(onPressed: (){}, child:  Text('Change Profile Picture')),
+                    Obx(() {
+                      final networkImage = controller.user.value.profilePicture;
+                      final hasNetworkImage = networkImage.isNotEmpty;
+                      
+                      return controller.imageUploading.value
+                          ? const CShimmerEffect(
+                              width: 80, height: 80, radius: 80)
+                          : CircleAvatar(
+                              radius: 35,
+                              backgroundColor: Colors.grey.shade300,
+                              child: ClipOval(
+                                child: hasNetworkImage
+                                    ? Image.network(
+                                        networkImage,
+                                        width: 80,
+                                        height: 80,
+                                        fit: BoxFit.cover,
+                                        errorBuilder: (context, error, stackTrace) => 
+                                            Image.asset(
+                                              CImages.user, 
+                                              width: 80, 
+                                              height: 80, 
+                                              fit: BoxFit.cover,
+                                            ),
+                                      )
+                                    : Image.asset(
+                                        CImages.user, 
+                                        width: 80, 
+                                        height: 80, 
+                                        fit: BoxFit.cover,
+                                      ),
+                              ),
+                            );
+                    }),
+                    TextButton(
+                        onPressed: () => controller.uploadUserProfilePicture(),
+                        child: Text('Change Profile Picture')),
                   ],
                 ),
               ),
+
               /// Details
-const SizedBox(height: CSizes.spaceBtwItems / 2),
-const Divider(),
-const SizedBox(height: CSizes.spaceBtwItems),
+              const SizedBox(height: CSizes.spaceBtwItems / 2),
+              const Divider(),
+              const SizedBox(height: CSizes.spaceBtwItems),
 
-/// Heading Profile Info
-const CSectionHeading(title: 'Profile Information', showActionButton: false),
-const SizedBox(height: CSizes.spaceBtwItems),
+              /// Heading Profile Info
+              const CSectionHeading(
+                  title: 'Profile Information', showActionButton: false),
+              const SizedBox(height: CSizes.spaceBtwItems),
 
-CProfileMenu(title: 'Name', value: 'Nawaf Alshammari', onPressed: () {}),
-CProfileMenu(title: 'Username', value: 'nawaf369', onPressed: () {}),
+              CProfileMenu(
+                  title: 'Name',
+                  value: controller.user.value.fullName,
+                  onPressed: () => Get.to(() => const ChangeName())),
+              CProfileMenu(
+                  title: 'Username',
+                  value: controller.user.value.username,
+                  onPressed: () {}),
 
-const SizedBox(height: CSizes.spaceBtwItems),
-const Divider(),
-const SizedBox(height: CSizes.spaceBtwItems),
+              const SizedBox(height: CSizes.spaceBtwItems),
+              const Divider(),
+              const SizedBox(height: CSizes.spaceBtwItems),
 
-/// Heading Personal Info
-const CSectionHeading(title: 'Personal Information', showActionButton: false),
-const SizedBox(height: CSizes.spaceBtwItems),
+              /// Heading Personal Info
+              const CSectionHeading(
+                  title: 'Personal Information', showActionButton: false),
+              const SizedBox(height: CSizes.spaceBtwItems),
 
-CProfileMenu(title: 'User ID', value: '45689',icon: Iconsax.copy, onPressed: () {}),
-CProfileMenu(title: 'E-mail', value: 'Alshuraim20@gmail.com', onPressed: () {}),
-CProfileMenu(title: 'Phone Number', value: '0542076655', onPressed: () {}),
-CProfileMenu(title: 'Gender', value: 'Male', onPressed: () {}),
-CProfileMenu(title: 'Date of Birth', value: '20 Feb, 2002', onPressed: () {}),
-const SizedBox(height: CSizes.spaceBtwItems),
+              CProfileMenu(
+                  title: 'User ID',
+                  value: controller.user.value.id,
+                  icon: Iconsax.copy,
+                  onPressed: () {}),
+              CProfileMenu(
+                  title: 'E-mail',
+                  value: controller.user.value.email,
+                  onPressed: () {}),
+              // CProfileMenu(
+              //     title: 'Phone Number',
+              //     value: controller.user.value.phoneNumber,
+              //     onPressed: () {}),
+              // CProfileMenu(title: 'Gender', value: 'Male', onPressed: () {}),
+              // CProfileMenu(
+              //     title: 'Date of Birth',
+              //     value: '20 Feb, 2002',
+              //     onPressed: () {}),
+              const SizedBox(height: CSizes.spaceBtwItems),
 
-Center(
-  child: TextButton(
-    onPressed: (){}, child: const Text('close Account', style: TextStyle(color: Colors.red),)),
-),
+              Center(
+                child: TextButton(
+                    onPressed: () => controller.deleteAccountWarningPopup(),
+                    child: const Text(
+                      'close Account',
+                      style: TextStyle(color: Colors.red),
+                    )),
+              ),
             ],
           ),
-
         ),
-
       ),
     );
   }
 }
-

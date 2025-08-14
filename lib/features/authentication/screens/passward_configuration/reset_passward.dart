@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
+import 'package:loom_store/features/authentication/controllers/forget_password/forget_password_controller.dart';
+import 'package:loom_store/features/authentication/screens/login/login.dart';
 import 'package:loom_store/utils/constants/image_strings.dart';
 import 'package:loom_store/utils/constants/sizes.dart';
 import 'package:loom_store/utils/constants/text_strings.dart';
@@ -9,7 +11,9 @@ import 'package:loom_store/utils/helpers/helper_functions.dart';
 
 
 class ResetPassward extends StatelessWidget {
-  const ResetPassward({super.key});
+  const ResetPassward({super.key, required this.email});
+
+  final String email;
 
   @override
   Widget build(BuildContext context) {
@@ -36,9 +40,9 @@ class ResetPassward extends StatelessWidget {
               const SizedBox(height: CSizes.spaceBtwSections), 
 
               //buttons
-              SizedBox(width: double.infinity, child: ElevatedButton(onPressed: (){}, child: const Text(CTexts.done))),
+              SizedBox(width: double.infinity, child: ElevatedButton(onPressed: () => Get.offAll(() => LoginScreen()), child: const Text(CTexts.done))),
               const SizedBox(height: CSizes.spaceBtwItems), 
-              SizedBox(width: double.infinity, child: TextButton(onPressed: (){}, child: const Text(CTexts.resendEmail))),
+              SizedBox(width: double.infinity, child: TextButton(onPressed: () => ForgetPasswordController.instance.resendPasswordResetEmail(email), child: const Text(CTexts.resendEmail))),
 
 
             ],

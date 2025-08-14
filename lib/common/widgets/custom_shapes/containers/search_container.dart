@@ -26,11 +26,12 @@ class CSearchContainer extends StatelessWidget {
 
     return GestureDetector(
       onTap: onTap,
+
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: CSizes.defaultSpace),
         child: Container(
           width: CDeviceUtils.getScreenWidth(context),
-          padding: const EdgeInsets.all(CSizes.md),
+          padding: const EdgeInsets.all(CSizes.md/1.2),
           decoration: BoxDecoration(
             color: showBackgroung ? dark ? CColors.dark : CColors.light : Colors.transparent,
             borderRadius: BorderRadius.circular(CSizes.cardRadiusLg),

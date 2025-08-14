@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:loom_store/features/authentication/controllers.onboarding/onboarder_controller.dart';
+import 'package:loom_store/features/authentication/controllers/onboarding/onboarder_controller.dart';
 import 'package:loom_store/utils/constants/colors.dart';
 import 'package:loom_store/utils/constants/sizes.dart';
 import 'package:loom_store/utils/device/device_utility.dart';
@@ -23,7 +23,7 @@ class OnBoardingDotNavigation extends StatelessWidget {
         controller: controller.pageController,
         onDotClicked: controller.dotNavigaationClick,
 
-        effect: ExpandingDotsEffect( activeDotColor: dark ? CColors.light: CColors.dark,dotHeight: 6),
+        effect: ExpandingDotsEffect( activeDotColor: dark ? CColors.primary: CColors.primary,dotHeight: 6),
       ),
     );
   }

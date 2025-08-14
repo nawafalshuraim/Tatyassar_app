@@ -1,10 +1,21 @@
- class TValidator {
+ class CValidator {
+
+  // validates empty text
+  static String? validateEmptyText(String? fieldName, String? value) {
+    if (value == null || value.isEmpty) {
+      return '$fieldName is required.';
+    }
+
+      return null;
+}
   
-  // Validates an email 
+  // validates an email 
   static String? validateEmail(String? value) {
     if (value == null || value.isEmpty) {
       return 'Email is required.';
     }
+
+
 
     final emailRegExp = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
     if (!emailRegExp.hasMatch(value)) {
@@ -14,8 +25,8 @@
     return null;
   }
 
-  // Validates a password for strength. Checks for length, 
-  // uppercase, number, and special character.
+  // validates a password for strength. Checks for length, 
+  //uppercase, number, and special character.
   static String? validatePassword(String? value) {
     if (value == null || value.isEmpty) {
       return 'Password is required.';

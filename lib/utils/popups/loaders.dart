@@ -5,7 +5,7 @@ import 'package:iconsax/iconsax.dart';
 import '../constants/colors.dart';
 import '../helpers/helper_functions.dart';
 
-class TLoaders {
+class CLoaders {
   static hideSnackBar() => ScaffoldMessenger.of(Get.context!).hideCurrentSnackBar();
 
   static customToast({required message}) {
@@ -34,7 +34,7 @@ class TLoaders {
       isDismissible: true,
       shouldIconPulse: true,
       colorText: Colors.white,
-      backgroundColor: CColors.primary,
+      backgroundColor: const Color.fromARGB(255, 92, 172, 105),
       snackPosition: SnackPosition.BOTTOM,
       duration: Duration(seconds: duration),
       margin: const EdgeInsets.all(10),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:loom_store/features/authentication/controllers.onboarding/onboarder_controller.dart';
+import 'package:get/get.dart';
+import 'package:loom_store/features/authentication/screens/login/login.dart';
+import 'package:loom_store/utils/constants/colors.dart';
 import 'package:loom_store/utils/constants/sizes.dart';
 import 'package:loom_store/utils/device/device_utility.dart';
 
@@ -12,8 +14,8 @@ class OnboardingSkip extends StatelessWidget {
       top: CDeviceUtils.getAppBarHeight(),
       right: CSizes.defaultSpace,
       child: TextButton(
-       onPressed: () => OnBoardingController.instance.skipPage(),
-       child: const Text('Skip'),
+       onPressed: () => Get.to(LoginScreen()),
+       child: const Text('Skip',style: TextStyle(color: CColors.primary),),
      )
    );
   }

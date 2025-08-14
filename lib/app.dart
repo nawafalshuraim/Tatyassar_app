@@ -1,27 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/get_navigation.dart';
-import 'package:loom_store/features/authentication/screens/onboarding/onboarding.dart';
-import 'package:loom_store/features/personalization/screens/settings/settings.dart';
-import 'package:loom_store/features/shop/screens/cart/cart.dart';
-import 'package:loom_store/features/shop/screens/checkout/checkout.dart';
-import 'package:loom_store/features/shop/screens/product_datails/product_detail.dart';
-import 'package:loom_store/features/shop/screens/product_reviews/product_review.dart';
-import 'package:loom_store/navigation_menu.dart';
+import 'package:loom_store/bindings/general_bindings.dart';
+import 'package:loom_store/routs/app_routs.dart';
+import 'package:loom_store/utils/constants/colors.dart';
 import 'package:loom_store/utils/theme/theme.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return GetMaterialApp(
       themeMode: ThemeMode.system,
-      theme: CAppTheme.lightTheme, 
-      darkTheme: CAppTheme.darkTheme, 
-      home: const OnBoardingScreen(),
-
-      
-      
+      theme: CAppTheme.lightTheme,
+      darkTheme: CAppTheme.darkTheme,
+      initialBinding: GeneralBindings(),
+      getPages: AppRoutes.pages,
+      // Circular Progress Indicator meanwhile authentication repository is deciding to show the relevent screen.
+      home: const Scaffold(
+          backgroundColor: CColors.primary,
+          body: Center(child: CircularProgressIndicator(color: Colors.white))),
     );
   }
 }

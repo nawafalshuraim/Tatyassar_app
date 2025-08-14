@@ -26,7 +26,6 @@ class CRoundImage extends StatelessWidget {
   final Color? backgroundColor;
   final BoxFit? fit;
   final EdgeInsetsGeometry? padding;
-  // se to true
   final bool isNetworkImage;
   final VoidCallback? onPressed;
   final double borderRadius;

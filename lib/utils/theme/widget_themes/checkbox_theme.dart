@@ -18,7 +18,7 @@ class CCheckboxTheme {
     }),
     fillColor: WidgetStateProperty.resolveWith((states) {
       if (states.contains(WidgetState.selected)) {
-        return CColors.primary;
+        return const Color.fromARGB(255, 113, 131, 171);
       } else {
         return Colors.transparent;
       }
@@ -37,7 +37,7 @@ class CCheckboxTheme {
     }),
     fillColor: WidgetStateProperty.resolveWith((states) {
       if (states.contains(WidgetState.selected)) {
-        return CColors.primary;
+        return const Color.fromARGB(255, 113, 131, 171);
       } else {
         return Colors.transparent;
       }

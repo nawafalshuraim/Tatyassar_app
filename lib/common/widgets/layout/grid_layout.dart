@@ -5,7 +5,7 @@ class CGridLayout extends StatelessWidget {
   const CGridLayout(
       {super.key,
       required this.itemCount,
-      this.mainAxisExtent = 254,
+      this.mainAxisExtent = 345,
       required this.itemBuilder});
 
   final int itemCount;

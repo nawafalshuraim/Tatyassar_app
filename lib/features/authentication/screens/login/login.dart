@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:loom_store/common/styles/spacing_styles.dart';
 import 'package:loom_store/common/widgets/login_signup/login_signup/login_form_divider.dart';
-import 'package:loom_store/common/widgets/login_signup/login_signup/login_form_footer.dart';
+import 'package:loom_store/common/widgets/login_signup/login_signup/social_button.dart';
 import 'package:loom_store/features/authentication/screens/login/widgets/login_form.dart';
 import 'package:loom_store/features/authentication/screens/login/widgets/login_header.dart';
 import 'package:loom_store/utils/constants/sizes.dart';
@@ -31,7 +31,10 @@ class LoginScreen extends StatelessWidget {
             const SizedBox(height: CSizes.spaceBtwSections),
 
              // footer
-             const CLoginFooter()
+             const CSocialButton (),
+
+
+
            ],    
           ),
           ),

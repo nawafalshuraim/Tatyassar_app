@@ -23,7 +23,7 @@ class CAppTheme {
     primaryColor: const Color.fromARGB(255, 199, 51, 51),
     textTheme: CTextTheme.lightTextTheme,
     chipTheme: CChipTheme.lightChipTheme,
-    scaffoldBackgroundColor: CColors.white,
+    scaffoldBackgroundColor: const Color.fromARGB(255, 255, 255, 255),
     appBarTheme: CAppBarTheme.lightAppBarTheme,
     checkboxTheme: CCheckboxTheme.lightCheckboxTheme,
     bottomSheetTheme: CBottomSheetTheme.lightBottomSheetTheme,
