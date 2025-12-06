@@ -1,84 +1,40 @@
 {
   "project_info": {
-    "project_number": "518508507331",
-    "project_id": "leanfix-store",
-    "storage_bucket": "leanfix-store.firebasestorage.app"
+    "project_number": "654246235466",
+    "project_id": "umbrella-c5dab",
+    "storage_bucket": "umbrella-c5dab.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:518508507331:android:6a342a1c258d859c30f276",
-        "android_client_info": {
-          "package_name": "com.nawaf.LeanFix"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "518508507331-ccorlnst3lldnegmaedprs0bvpd0d60c.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.nawaf.LeanFix",
-            "certificate_hash": "9ea496104076c30f08654347066aef9d7563f037"
-          }
-        },
-        {
-          "client_id": "518508507331-c1fsu0gpvj74la4i6oa80pbf75jvfhme.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyD7T1DQwFQHgteIg7LpnMpvqF1jvGv4m0o"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "518508507331-c1fsu0gpvj74la4i6oa80pbf75jvfhme.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "518508507331-tmpadmelrod7s0l9qrq24c0m34hsi5nc.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.nawaffahad.LeanFixStore"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:518508507331:android:5e49b005f267934630f276",
+        "mobilesdk_app_id": "1:654246235466:android:20650160fde5a668bdc5b3",
         "android_client_info": {
           "package_name": "com.nawaffahad.LeanFixStore"
         }
       },
       "oauth_client": [
         {
-          "client_id": "518508507331-c1fsu0gpvj74la4i6oa80pbf75jvfhme.apps.googleusercontent.com",
+          "client_id": "654246235466-dc13ome7ch3mob6mo5u5kg2rp5b309gv.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyD7T1DQwFQHgteIg7LpnMpvqF1jvGv4m0o"
+          "current_key": "AIzaSyBy0Sle8H2INMIHsdtXQCwEWNeJ2A5ZUHo"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "518508507331-c1fsu0gpvj74la4i6oa80pbf75jvfhme.apps.googleusercontent.com",
+              "client_id": "654246235466-dc13ome7ch3mob6mo5u5kg2rp5b309gv.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "518508507331-tmpadmelrod7s0l9qrq24c0m34hsi5nc.apps.googleusercontent.com",
+              "client_id": "654246235466-ct6gbfngladf55tqektkpe76a6n9fvpv.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.nawaffahad.LeanFixStore"
+                "bundle_id": "com.nawaf.Tatyassar"
               }
             }
           ]

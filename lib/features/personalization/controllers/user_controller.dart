@@ -1,3 +1,6 @@
+import 'dart:convert';
+import 'dart:io';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -201,31 +204,72 @@ class UserController extends GetxController {
   }
 
 //upload usser image
+//   uploadUserProfilePicture() async {
+//     try {
+//       final image = await ImagePicker().pickImage(
+//           source: ImageSource.gallery,
+//           imageQuality: 70,
+//           maxWidth: 512,
+//           maxHeight: 512);
+//       if (image != null) {
+//         // upload image
+//         imageUploading.value = true;
+//         final imageUrl =
+//             await userRepository.uploadImage('Users/Images/Profile/', image);
+//         // update image
+//         Map<String, dynamic> json = {'ProfilePicture': imageUrl};
+//         await userRepository.updateSingleField(json);
+
+//         user.value.profilePicture = imageUrl;
+//         user.refresh();
+//         CLoaders.successSnackBar(
+//             title: 'Done', message: 'Your profile image has been updated!');
+//       }
+//     } catch (e) {
+//       CLoaders.errorSnackBar(title: '!', message: 'something went wrong: $e');
+//     } finally {
+//       imageUploading.value = false;
+//     }
+//   }
+
+// upload user image (Base64 Version – No Firebase Storage)
   uploadUserProfilePicture() async {
     try {
-      final image = await ImagePicker().pickImage(
-          source: ImageSource.gallery,
-          imageQuality: 70,
-          maxWidth: 512,
-          maxHeight: 512);
-      if (image != null) {
-        // upload image
-        imageUploading.value = true;
-        final imageUrl =
-            await userRepository.uploadImage('Users/Images/Profile/', image);
-        // update image
-        Map<String, dynamic> json = {'ProfilePicture': imageUrl};
-        await userRepository.updateSingleField(json);
+      final ImagePicker picker = ImagePicker();
+      final XFile? image = await picker.pickImage(
+        source: ImageSource.gallery,
+        imageQuality: 70, // compress
+        maxWidth: 512,
+        maxHeight: 512,
+      );
 
-        user.value.profilePicture = imageUrl;
-        user.refresh();
-        CLoaders.successSnackBar(
-            title: 'Done', message: 'Your profile image has been updated!');
-      }
+      if (image == null) return;
+
+      imageUploading.value = true; // start loader
+
+      /// Convert to Base64
+      final bytes = await File(image.path).readAsBytes();
+      final base64Image = base64Encode(bytes);
+
+      /// Update Firestore (field must match exactly)
+      Map<String, dynamic> json = {'ProfilePicture': base64Image};
+      await userRepository.updateSingleField(json);
+
+      /// Update reactive user model
+      user.value.profilePicture = base64Image;
+      user.refresh();
+
+      CLoaders.successSnackBar(
+        title: 'Done',
+        message: 'Your profile image has been updated!',
+      );
     } catch (e) {
-      CLoaders.errorSnackBar(title: '!', message: 'something went wrong: $e');
+      CLoaders.errorSnackBar(
+        title: 'Error',
+        message: 'Something went wrong: $e',
+      );
     } finally {
-      imageUploading.value = false;
+      imageUploading.value = false; // stop loader
     }
   }
 }

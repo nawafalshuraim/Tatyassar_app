@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
@@ -33,38 +35,30 @@ class ProfileScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     Obx(() {
-                      final networkImage = controller.user.value.profilePicture;
-                      final hasNetworkImage = networkImage.isNotEmpty;
-                      
-                      return controller.imageUploading.value
-                          ? const CShimmerEffect(
-                              width: 80, height: 80, radius: 80)
-                          : CircleAvatar(
-                              radius: 35,
-                              backgroundColor: Colors.grey.shade300,
-                              child: ClipOval(
-                                child: hasNetworkImage
-                                    ? Image.network(
-                                        networkImage,
-                                        width: 80,
-                                        height: 80,
-                                        fit: BoxFit.cover,
-                                        errorBuilder: (context, error, stackTrace) => 
-                                            Image.asset(
-                                              CImages.user, 
-                                              width: 80, 
-                                              height: 80, 
-                                              fit: BoxFit.cover,
-                                            ),
-                                      )
-                                    : Image.asset(
-                                        CImages.user, 
-                                        width: 80, 
-                                        height: 80, 
-                                        fit: BoxFit.cover,
-                                      ),
-                              ),
-                            );
+                      final controller = UserController.instance;
+                      final picture = controller.user.value.profilePicture;
+
+                      if (controller.imageUploading.value) {
+                        return const CShimmerEffect(
+                            width: 80, height: 80, radius: 80);
+                      }
+
+                      if (picture.isEmpty) {
+                        return CircleAvatar(
+                          radius: 40,
+                          backgroundColor: Colors.grey.shade200,
+                          child: const Icon(Icons.person,
+                              size: 40, color: Colors.grey),
+                        );
+                      }
+
+                      return CircleAvatar(
+                        radius: 40,
+                        backgroundColor: Colors.grey.shade200,
+                        backgroundImage: MemoryImage(
+                          base64Decode(picture),
+                        ),
+                      );
                     }),
                     TextButton(
                         onPressed: () => controller.uploadUserProfilePicture(),

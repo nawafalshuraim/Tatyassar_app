@@ -28,7 +28,7 @@ class ChangeName extends StatelessWidget {
           children: [
             /// Headings
             Text(
-              'Use real name for easy verification. This name will appear on several pages.',
+              'This name will appear on several pages.',
               style: Theme.of(context).textTheme.labelMedium,
             ), // Text
             const SizedBox(height: CSizes.spaceBtwSections),

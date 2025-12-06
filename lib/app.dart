@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:loom_store/bindings/general_bindings.dart';
+import 'package:loom_store/features/shop/screens/home/home.dart';
 import 'package:loom_store/routs/app_routs.dart';
-import 'package:loom_store/utils/constants/colors.dart';
 import 'package:loom_store/utils/theme/theme.dart';
 
 class App extends StatelessWidget {
@@ -17,9 +17,11 @@ class App extends StatelessWidget {
       initialBinding: GeneralBindings(),
       getPages: AppRoutes.pages,
       // Circular Progress Indicator meanwhile authentication repository is deciding to show the relevent screen.
-      home: const Scaffold(
-          backgroundColor: CColors.primary,
-          body: Center(child: CircularProgressIndicator(color: Colors.white))),
+      // home: const Scaffold(
+      //     backgroundColor: CColors.primary,
+      //     body: Center(child: CircularProgressIndicator(color: Colors.white))),
+      home: const ChatScreen(),
+
     );
   }
 }

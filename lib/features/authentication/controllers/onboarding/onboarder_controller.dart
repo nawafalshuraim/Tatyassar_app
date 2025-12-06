@@ -3,39 +3,61 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:loom_store/features/authentication/screens/login/login.dart';
 
-class OnBoardingController extends GetxController{
+class OnBoardingController extends GetxController {
   static OnBoardingController get instance => Get.find();
 
-  //varibles
+  // Variables
   final pageController = PageController();
   Rx<int> currentPageIndex = 0.obs;
+  final storage = GetStorage();
 
-  void updatePageIndicator(index) => currentPageIndex.value = index;
+  // Update dots indicator index
+  void updatePageIndicator(int index) => currentPageIndex.value = index;
 
-  void dotNavigaationClick(index){
+  // Dot navigation click (fixed name)
+  void dotNavigationClick(int index) {
     currentPageIndex.value = index;
-    pageController.jumpTo(index);
+    pageController.animateToPage(
+      index,
+      duration: const Duration(milliseconds: 300),
+      curve: Curves.easeInOut,
+    );
   }
 
-  void nextPage(){
-    if(currentPageIndex.value == 2){
-      // limit the appearance of the onBoarding screen for new ones
-      final storage = GetStorage();
+  // Go to next page or finish onboarding
+  void nextPage() {
+    if (currentPageIndex.value == 2) {
       storage.write('inFirstTime', false);
-      Get.offAll( const LoginScreen());
-    } else{
+      Get.offAll(const LoginScreen());
+    } else {
       int page = currentPageIndex.value + 1;
-      pageController.jumpToPage(page);
+      pageController.animateToPage(
+        page,
+        duration: const Duration(milliseconds: 300),
+        curve: Curves.easeInOut,
+      );
     }
   }
-  
 
-  void skipPage(){
-    //first page is 0
-    
-    currentPageIndex.value = 2;
-    pageController.jumpToPage(2);
+  // Go to previous page
+  void previousPage() {
+    if (currentPageIndex.value > 0) {
+      int page = currentPageIndex.value - 1;
+      pageController.animateToPage(
+        page,
+        duration: const Duration(milliseconds: 300),
+        curve: Curves.easeInOut,
+      );
+    }
   }
 
+  // Skip to last page
+  void skipPage() {
+    currentPageIndex.value = 2;
+    pageController.animateToPage(
+      2,
+      duration: const Duration(milliseconds: 300),
+      curve: Curves.easeInOut,
+    );
+  }
 }
-

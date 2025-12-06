@@ -25,10 +25,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -47,32 +44,41 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDApH_DLd45GSAuHF_Kf1xMZpLhlD_XU4w',
-    appId: '1:518508507331:web:7cd183fbe747369130f276',
-    messagingSenderId: '518508507331',
-    projectId: 'leanfix-store',
-    authDomain: 'leanfix-store.firebaseapp.com',
-    storageBucket: 'leanfix-store.firebasestorage.app',
-    measurementId: 'G-2WNHXKCP0M',
+    apiKey: 'AIzaSyAOlL9jrM88MPsltU4Qc_wuGkrMIg2MSzU',
+    appId: '1:654246235466:web:1c697f1e85e2e431bdc5b3',
+    messagingSenderId: '654246235466',
+    projectId: 'umbrella-c5dab',
+    authDomain: 'umbrella-c5dab.firebaseapp.com',
+    storageBucket: 'umbrella-c5dab.firebasestorage.app',
+    measurementId: 'G-2XN8RC02BT',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyD7T1DQwFQHgteIg7LpnMpvqF1jvGv4m0o',
-    appId: '1:518508507331:android:5e49b005f267934630f276',
-    messagingSenderId: '518508507331',
-    projectId: 'leanfix-store',
-    storageBucket: 'leanfix-store.firebasestorage.app',
+    apiKey: 'AIzaSyBy0Sle8H2INMIHsdtXQCwEWNeJ2A5ZUHo',
+    appId: '1:654246235466:android:20650160fde5a668bdc5b3',
+    messagingSenderId: '654246235466',
+    projectId: 'umbrella-c5dab',
+    storageBucket: 'umbrella-c5dab.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCIO7cAXBNh6ttVef3tZzVLE3wHAoZ8HjQ',
-    appId: '1:518508507331:ios:9de6a5aa29c9e02430f276',
-    messagingSenderId: '518508507331',
-    projectId: 'leanfix-store',
-    storageBucket: 'leanfix-store.firebasestorage.app',
-    androidClientId: '518508507331-ccorlnst3lldnegmaedprs0bvpd0d60c.apps.googleusercontent.com',
-    iosClientId: '518508507331-tmpadmelrod7s0l9qrq24c0m34hsi5nc.apps.googleusercontent.com',
-    iosBundleId: 'com.nawaffahad.LeanFixStore',
+    apiKey: 'AIzaSyAIbWovbdywQuhgoNoGOoITMur5g-yKWeM',
+    appId: '1:654246235466:ios:967795cc6d421f52bdc5b3',
+    messagingSenderId: '654246235466',
+    projectId: 'umbrella-c5dab',
+    storageBucket: 'umbrella-c5dab.firebasestorage.app',
+    iosClientId: '654246235466-ct6gbfngladf55tqektkpe76a6n9fvpv.apps.googleusercontent.com',
+    iosBundleId: 'com.nawaf.Tatyassar',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyAIbWovbdywQuhgoNoGOoITMur5g-yKWeM',
+    appId: '1:654246235466:ios:883060890a4ea1cfbdc5b3',
+    messagingSenderId: '654246235466',
+    projectId: 'umbrella-c5dab',
+    storageBucket: 'umbrella-c5dab.firebasestorage.app',
+    iosClientId: '654246235466-94e0vh4s3aun1da3kcj6684vsteb5eb1.apps.googleusercontent.com',
+    iosBundleId: 'com.example.tStore',
   );
 
 }

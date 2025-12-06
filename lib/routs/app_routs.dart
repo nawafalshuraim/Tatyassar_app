@@ -4,7 +4,7 @@ import 'package:loom_store/routs/routs.dart';
 
 class AppRoutes {
   static final pages = [
-    GetPage(name: CRoutes.home, page: () => HomeScreen()),
+GetPage(name: CRoutes.home, page: () => const ChatScreen()),
     // Add more GetPage entries as needed
   ];
 }

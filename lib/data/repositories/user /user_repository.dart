@@ -1,10 +1,6 @@
-import 'dart:io';
-
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:loom_store/data/repositories/authentication/authentication_repository.dart';
 import 'package:loom_store/features/authentication/models/user_model.dart';
 import '../../../utils/exceptions/firebase_exceptions.dart';
@@ -31,17 +27,19 @@ class UserRepository extends GetxController {
       throw 'Something went wrong. Please try again';
     }
   }
+
   // function to fetch user details based on user ID.
   Future<UserModel> fetchUserDetails() async {
     try {
-      final documentSnapshot = await _db.collection('Users').doc(AuthenticationRepository.instance.authUser?.uid
-      ).get();
-      if(documentSnapshot.exists){
+      final documentSnapshot = await _db
+          .collection('Users')
+          .doc(AuthenticationRepository.instance.authUser?.uid)
+          .get();
+      if (documentSnapshot.exists) {
         return UserModel.fromSnapshot(documentSnapshot);
-      }else{
+      } else {
         return UserModel.empty();
       }
-      
     } on FirebaseException catch (e) {
       throw CFirebaseException(e.code).message;
     } on FormatException catch (_) {
@@ -56,7 +54,10 @@ class UserRepository extends GetxController {
   // function to update user data on Firestore.
   Future<void> updateUserDetails(UserModel updateUser) async {
     try {
-      await _db.collection("Users").doc(updateUser.id).update(updateUser.toJson());
+      await _db
+          .collection("Users")
+          .doc(updateUser.id)
+          .update(updateUser.toJson());
     } on FirebaseException catch (e) {
       throw CFirebaseException(e.code).message;
     } on FormatException catch (_) {
@@ -71,7 +72,10 @@ class UserRepository extends GetxController {
   // update any field in specific user collection
   Future<void> updateSingleField(Map<String, dynamic> json) async {
     try {
-      await _db.collection("Users").doc(AuthenticationRepository.instance.authUser?.uid).update(json);
+      await _db
+          .collection("Users")
+          .doc(AuthenticationRepository.instance.authUser?.uid)
+          .update(json);
     } on FirebaseException catch (e) {
       throw CFirebaseException(e.code).message;
     } on FormatException catch (_) {
@@ -82,7 +86,7 @@ class UserRepository extends GetxController {
       throw 'Something went wrong. Please try again';
     }
   }
-   
+
   // function to remove user from Firestore.
   Future<void> removeUserRecord(String userId) async {
     try {
@@ -98,21 +102,38 @@ class UserRepository extends GetxController {
     }
   }
 
-  // upload any image 
-  Future<String> uploadImage(String path, XFile image) async {
-  try {
-    final ref = FirebaseStorage.instance.ref(path).child(image.name);
-    await ref.putFile(File(image.path));
-    final url = await ref.getDownloadURL();
-    return url;
-  } on FirebaseException catch (e) {
-    throw CFirebaseException(e.code).message;
-  } on FormatException catch (_) {
-    throw const CFormatException();
-  } on PlatformException catch (e) {
-    throw CPlatformException(e.code).message;
-  } catch (e) {
-    throw 'Something went wrong. Please try again';
+//   // upload any image
+//   Future<String> uploadImage(String path, XFile image) async {
+//   try {
+//     final ref = FirebaseStorage.instance.ref(path).child(image.name);
+//     await ref.putFile(File(image.path));
+//     final url = await ref.getDownloadURL();
+//     return url;
+//   } on FirebaseException catch (e) {
+//     throw CFirebaseException(e.code).message;
+//   } on FormatException catch (_) {
+//     throw const CFormatException();
+//   } on PlatformException catch (e) {
+//     throw CPlatformException(e.code).message;
+//   } catch (e) {
+//     throw 'Something went wrong. Please try again';
+//   }
+// }
+// Save Base64 profile picture to Firestore
+  Future<void> updateProfilePictureBase64(String base64) async {
+    try {
+      final uid = AuthenticationRepository.instance.authUser!.uid;
+      await _db.collection("Users").doc(uid).update({
+        "ProfilePicture": base64,
+      });
+    } on FirebaseException catch (e) {
+      throw CFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw const CFormatException();
+    } on PlatformException catch (e) {
+      throw CPlatformException(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong. Please try again';
+    }
   }
-} 
 }

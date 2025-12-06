@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:loom_store/common/products/checkout_cart/cart_menu_icon.dart';
 import 'package:loom_store/common/widgets/appbar/appbar.dart';
 import 'package:loom_store/common/widgets/shimmer/shimmer.dart';
 import 'package:loom_store/features/personalization/controllers/user_controller.dart';
-import 'package:loom_store/features/shop/screens/cart/cart.dart';
 import 'package:loom_store/utils/constants/colors.dart';
 import 'package:loom_store/utils/constants/text_strings.dart';
 
@@ -40,11 +37,9 @@ class CHomeAppBar extends StatelessWidget {
               );
             }
           }),
+          
         ],
       ),
-      actions: [
-        CCartCounterIcon(onPressed: () => CartScreen(), iconColor: CColors.white,),
-      ],
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
@@ -19,9 +20,9 @@ class CUserProfileTile extends StatelessWidget {
     return Obx(() {
       final controller = UserController.instance;
       final user = controller.user.value;
-      final networkImage = user.profilePicture;
-      final hasNetworkImage = networkImage.isNotEmpty;
-      
+      final base64Image = user.profilePicture;
+      final hasBase64 = base64Image.isNotEmpty;
+
       return ListTile(
         leading: controller.imageUploading.value
             ? const CShimmerEffect(width: 50, height: 50, radius: 50)
@@ -29,24 +30,17 @@ class CUserProfileTile extends StatelessWidget {
                 radius: 25,
                 backgroundColor: Colors.grey.shade300,
                 child: ClipOval(
-                  child: hasNetworkImage
-                      ? Image.network(
-                          networkImage,
+                  child: hasBase64
+                      ? Image.memory(
+                          const Base64Decoder().convert(base64Image),
                           width: 50,
                           height: 50,
                           fit: BoxFit.cover,
-                          errorBuilder: (context, error, stackTrace) => 
-                              Image.asset(
-                                CImages.user, 
-                                width: 50, 
-                                height: 50, 
-                                fit: BoxFit.cover,
-                              ),
                         )
                       : Image.asset(
-                          CImages.user, 
-                          width: 50, 
-                          height: 50, 
+                          CImages.user,
+                          width: 50,
+                          height: 50,
                           fit: BoxFit.cover,
                         ),
                 ),

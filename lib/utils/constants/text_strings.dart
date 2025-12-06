@@ -12,13 +12,13 @@ class CTexts {
 
 
   // -- OnBoarding Texts
-  static const String onBoardingTitle1 = "Book Services Anytime";
-  static const String onBoardingTitle2 = "Track Your Orders";
-  static const String onBoardingTitle3 = "Enjoy Exclusive Offers";
+  static const String onBoardingTitle1 = "Understand Your Stress";
+  static const String onBoardingTitle2 = "Personalized Coping Strategies";
+  static const String onBoardingTitle3 = "Mindfulness Companion";
 
-  static const String onBoardingSubTitle1 = "Access reliable repair and service experts right from your phone";
-  static const String onBoardingSubTitle2 = "Stay in the loop with live updates and notifications for every service";
-  static const String onBoardingSubTitle3 = "Enjoy special deals and savings on the services you need";
+  static const String onBoardingSubTitle1 = "Our assistant listens to your words and identifies emotional cues like anxiety, avoidance, self-blame, and more";
+  static const String onBoardingSubTitle2 = "Evidence-based tips to help you calm your mind and manage your stress";
+  static const String onBoardingSubTitle3 = "Your everyday guide to inner peace";
 
 
   // -- Authentication Forms
@@ -44,15 +44,15 @@ class CTexts {
 
 
   // -- Authentication Headings
-  static const String loginTitle = "Welcome back,";
-  static const String loginSubTitle = "Find Your Maintenance Services with Unmatched Convenience";
+  static const String loginTitle = "WELCOME";
+  static const String loginSubTitle = "Find out how to stop psyching yourself out!";
   static const String signupTitle = "Let’s create your account";
   static const String forgetPasswordTitle = "Forget password";
-  static const String forgetPasswordSubTitle = "No worries sometimes people can forget too, enter your email and we will send you a password reset link.";
+  static const String forgetPasswordSubTitle = "Enter your email and we will send you a password reset link.";
   static const String changeYourPasswordTitle = "Password Reset Email Sent";
-  static const String changeYourPasswordSubTitle = "Your Account Security is Our Priority! We've Sent You a Secure Link to Safely Change Your Password and Keep Your Account Protected.";
+  static const String changeYourPasswordSubTitle = "We've Sent You a Secure Link to Safely Change Your Password and Keep Your Account Protected.";
   static const String confirmEmail = "Verify your email address!";
-  static const String confirmEmailSubTitle = "Congratulations! Your Account Awaits: Verify Your Email to Start Enjoying the services";
+  static const String confirmEmailSubTitle = "Your Account Awaits: Verify Your Email to Start with Tatyassar";
   static const String emailNotReceivedMessage = "Didn’t get the email? Check your junk/spam or resend it.";
   static const String yourAccountCreatedTitle = "Your account successfully created!";
   static const String yourAccountCreatedSubTitle = "Welcome";

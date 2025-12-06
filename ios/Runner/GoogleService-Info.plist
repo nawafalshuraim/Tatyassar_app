@@ -3,23 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>518508507331-tmpadmelrod7s0l9qrq24c0m34hsi5nc.apps.googleusercontent.com</string>
+	<string>654246235466-ct6gbfngladf55tqektkpe76a6n9fvpv.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.518508507331-tmpadmelrod7s0l9qrq24c0m34hsi5nc</string>
-	<key>ANDROID_CLIENT_ID</key>
-	<string>518508507331-ccorlnst3lldnegmaedprs0bvpd0d60c.apps.googleusercontent.com</string>
+	<string>com.googleusercontent.apps.654246235466-ct6gbfngladf55tqektkpe76a6n9fvpv</string>
 	<key>API_KEY</key>
-	<string>AIzaSyCIO7cAXBNh6ttVef3tZzVLE3wHAoZ8HjQ</string>
+	<string>AIzaSyAIbWovbdywQuhgoNoGOoITMur5g-yKWeM</string>
 	<key>GCM_SENDER_ID</key>
-	<string>518508507331</string>
+	<string>654246235466</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.nawaffahad.LeanFixStore</string>
+	<string>com.nawaf.Tatyassar</string>
 	<key>PROJECT_ID</key>
-	<string>leanfix-store</string>
+	<string>umbrella-c5dab</string>
 	<key>STORAGE_BUCKET</key>
-	<string>leanfix-store.firebasestorage.app</string>
+	<string>umbrella-c5dab.firebasestorage.app</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -31,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:518508507331:ios:9de6a5aa29c9e02430f276</string>
+	<string>1:654246235466:ios:967795cc6d421f52bdc5b3</string>
 </dict>
 </plist>

@@ -1,10 +1,7 @@
 import "package:flutter/widgets.dart";
 import "package:get/get.dart";
-import "package:get/get_core/src/get_main.dart";
 import "package:loom_store/data/repositories/user%20/user_repository.dart";
 import "package:loom_store/features/personalization/controllers/user_controller.dart";
-import "package:loom_store/features/personalization/screens/profile/profile.dart";
-import "package:loom_store/features/shop/screens/home/home.dart";
 import "package:loom_store/navigation_menu.dart";
 import "package:loom_store/utils/constants/image_strings.dart";
 import "package:loom_store/utils/helpers/network_manager.dart";
