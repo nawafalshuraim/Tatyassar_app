@@ -125,15 +125,4 @@ Users/
       {messageId}: { text, role, timestamp }
 ```
 
----
 
-## Team
-
-| Name | ID |
-|---|---|
-| Faisal Alshalan | 202153490 |
-| Nawaf Alshammari | 202167350 |
-
-**Course:** ICS487 — Intelligent Systems  
-**Institution:** King Fahd University of Petroleum and Minerals (KFUPM)  
-**Date:** December 2025
