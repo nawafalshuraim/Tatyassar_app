@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-import 'package:loom_store/features/authentication/controllers/onboarding/onboarder_controller.dart';
-import 'package:loom_store/features/authentication/screens/onboarding/widgets/onboarding_dot_navigation.dart';
-import 'package:loom_store/features/authentication/screens/onboarding/widgets/onboarding_next_button.dart';
-import 'package:loom_store/features/authentication/screens/onboarding/widgets/onboarding_page.dart';
-import 'package:loom_store/features/authentication/screens/onboarding/widgets/onboarding_skip.dart';
-import 'package:loom_store/utils/constants/image_strings.dart';
-import 'package:loom_store/utils/constants/text_strings.dart';
+import 'package:tatyassar/features/authentication/controllers/onboarding/onboarder_controller.dart';
+import 'package:tatyassar/features/authentication/screens/onboarding/widgets/onboarding_dot_navigation.dart';
+import 'package:tatyassar/features/authentication/screens/onboarding/widgets/onboarding_next_button.dart';
+import 'package:tatyassar/features/authentication/screens/onboarding/widgets/onboarding_page.dart';
+import 'package:tatyassar/features/authentication/screens/onboarding/widgets/onboarding_skip.dart';
+import 'package:tatyassar/utils/constants/image_strings.dart';
+import 'package:tatyassar/utils/constants/text_strings.dart';
 
 
 

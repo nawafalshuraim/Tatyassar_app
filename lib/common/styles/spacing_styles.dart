@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:loom_store/utils/constants/sizes.dart';
+import 'package:tatyassar/utils/constants/sizes.dart';
 
 class CSpacingStyle {
 static const EdgeInsetsGeometry paddingWithAppBarHeight = EdgeInsets.only(

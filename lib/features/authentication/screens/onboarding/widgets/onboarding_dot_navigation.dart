@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:loom_store/features/authentication/controllers/onboarding/onboarder_controller.dart';
-import 'package:loom_store/utils/constants/colors.dart';
-import 'package:loom_store/utils/constants/sizes.dart';
-import 'package:loom_store/utils/device/device_utility.dart';
-import 'package:loom_store/utils/helpers/helper_functions.dart';
+import 'package:tatyassar/features/authentication/controllers/onboarding/onboarder_controller.dart';
+import 'package:tatyassar/utils/constants/colors.dart';
+import 'package:tatyassar/utils/constants/sizes.dart';
+import 'package:tatyassar/utils/device/device_utility.dart';
+import 'package:tatyassar/utils/helpers/helper_functions.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnBoardingDotNavigation extends StatelessWidget {

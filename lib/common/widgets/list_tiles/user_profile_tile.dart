@@ -2,10 +2,10 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:loom_store/common/widgets/shimmer/shimmer.dart';
-import 'package:loom_store/features/personalization/controllers/user_controller.dart';
-import 'package:loom_store/utils/constants/colors.dart';
-import 'package:loom_store/utils/constants/image_strings.dart';
+import 'package:tatyassar/common/widgets/shimmer/shimmer.dart';
+import 'package:tatyassar/features/personalization/controllers/user_controller.dart';
+import 'package:tatyassar/utils/constants/colors.dart';
+import 'package:tatyassar/utils/constants/image_strings.dart';
 
 class CUserProfileTile extends StatelessWidget {
   const CUserProfileTile({
@@ -36,6 +36,12 @@ class CUserProfileTile extends StatelessWidget {
                           width: 50,
                           height: 50,
                           fit: BoxFit.cover,
+                          errorBuilder: (context, error, stackTrace) => Image.asset(
+                            CImages.user,
+                            width: 50,
+                            height: 50,
+                            fit: BoxFit.cover,
+                          ),
                         )
                       : Image.asset(
                           CImages.user,

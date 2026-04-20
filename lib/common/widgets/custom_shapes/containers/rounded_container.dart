@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
-import 'package:loom_store/utils/constants/colors.dart';
-import 'package:loom_store/utils/constants/sizes.dart';
+import 'package:tatyassar/utils/constants/colors.dart';
+import 'package:tatyassar/utils/constants/sizes.dart';
 
 class CRoundedContainer extends StatelessWidget {
   const CRoundedContainer({

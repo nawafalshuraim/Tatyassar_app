@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:loom_store/data/repositories/authentication/authentication_repository.dart';
-import 'package:loom_store/data/repositories/user%20/user_repository.dart';
-import 'package:loom_store/features/authentication/models/user_model.dart';
-import 'package:loom_store/features/authentication/screens/signup/verify_email.dart';
-import 'package:loom_store/utils/constants/image_strings.dart';
-import 'package:loom_store/utils/helpers/network_manager.dart';
-import 'package:loom_store/utils/popups/full_screen_loader.dart';
-import 'package:loom_store/utils/popups/loaders.dart';
+import 'package:tatyassar/data/repositories/authentication/authentication_repository.dart';
+import 'package:tatyassar/data/repositories/user/user_repository.dart';
+import 'package:tatyassar/features/authentication/models/user_model.dart';
+import 'package:tatyassar/features/authentication/screens/signup/verify_email.dart';
+import 'package:tatyassar/utils/constants/image_strings.dart';
+import 'package:tatyassar/utils/helpers/network_manager.dart';
+import 'package:tatyassar/utils/popups/full_screen_loader.dart';
+import 'package:tatyassar/utils/popups/loaders.dart';
 
 class SingupController extends GetxController {
   static SingupController get instance => Get.find();

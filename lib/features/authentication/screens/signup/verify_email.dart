@@ -2,11 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-import 'package:loom_store/features/authentication/controllers/signup/verify_email_controller.dart';
-import 'package:loom_store/utils/constants/image_strings.dart';
-import 'package:loom_store/utils/constants/sizes.dart';
-import 'package:loom_store/utils/constants/text_strings.dart';
-import 'package:loom_store/utils/helpers/helper_functions.dart';
+import 'package:tatyassar/features/authentication/controllers/signup/verify_email_controller.dart';
+import 'package:tatyassar/utils/constants/image_strings.dart';
+import 'package:tatyassar/utils/constants/sizes.dart';
+import 'package:tatyassar/utils/constants/text_strings.dart';
+import 'package:tatyassar/utils/helpers/helper_functions.dart';
 
 class VerifyEmailScreen extends StatelessWidget {
   const VerifyEmailScreen({super.key, this.email});
@@ -33,8 +33,10 @@ class VerifyEmailScreen extends StatelessWidget {
             children: [
               //image
               Image(
-                  image: AssetImage(CImages.deliveredEmailIllustration),
-                  width: CHelperFunctions.screenWidth() * 0.6),
+                image: AssetImage(CImages.deliveredEmailIllustration),
+                width: CHelperFunctions.screenWidth() * 0.6,
+                errorBuilder: (context, error, stackTrace) => const SizedBox.shrink(),
+              ),
               const SizedBox(height: CSizes.spaceBtwSections),
 
               //title and subtitle

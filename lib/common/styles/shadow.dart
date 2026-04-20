@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:loom_store/utils/constants/colors.dart';
+import 'package:tatyassar/utils/constants/colors.dart';
 
 class CShadowStyle {
   static final verticalProductShadow = BoxShadow(

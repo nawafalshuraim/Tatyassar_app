@@ -4,12 +4,12 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/get_instance.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 import 'package:get/get_utils/get_utils.dart';
-import 'package:loom_store/data/repositories/authentication/authentication_repository.dart';
-import 'package:loom_store/features/authentication/screens/passward_configuration/reset_passward.dart';
-import 'package:loom_store/utils/constants/image_strings.dart';
-import 'package:loom_store/utils/helpers/network_manager.dart';
-import 'package:loom_store/utils/popups/full_screen_loader.dart';
-import 'package:loom_store/utils/popups/loaders.dart';
+import 'package:tatyassar/data/repositories/authentication/authentication_repository.dart';
+import 'package:tatyassar/features/authentication/screens/passward_configuration/reset_passward.dart';
+import 'package:tatyassar/utils/constants/image_strings.dart';
+import 'package:tatyassar/utils/helpers/network_manager.dart';
+import 'package:tatyassar/utils/popups/full_screen_loader.dart';
+import 'package:tatyassar/utils/popups/loaders.dart';
 
 
 class ForgetPasswordController extends GetxController {

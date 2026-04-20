@@ -2,11 +2,11 @@ import 'dart:async';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
-import 'package:loom_store/common/widgets/login_signup/success_screen.dart/success_screen.dart';
-import 'package:loom_store/data/repositories/authentication/authentication_repository.dart';
-import 'package:loom_store/utils/constants/image_strings.dart';
-import 'package:loom_store/utils/constants/text_strings.dart';
-import 'package:loom_store/utils/popups/loaders.dart';
+import 'package:tatyassar/common/widgets/login_signup/success_screen.dart/success_screen.dart';
+import 'package:tatyassar/data/repositories/authentication/authentication_repository.dart';
+import 'package:tatyassar/utils/constants/image_strings.dart';
+import 'package:tatyassar/utils/constants/text_strings.dart';
+import 'package:tatyassar/utils/popups/loaders.dart';
 
 class VerifyEmailController extends GetxController {
   static VerifyEmailController get instance => Get.find();

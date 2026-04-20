@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:loom_store/utils/constants/colors.dart';
-import 'package:loom_store/utils/helpers/helper_functions.dart';
+import 'package:tatyassar/utils/constants/colors.dart';
+import 'package:tatyassar/utils/helpers/helper_functions.dart';
 import 'package:shimmer/shimmer.dart';
 
 class CShimmerEffect extends StatelessWidget {

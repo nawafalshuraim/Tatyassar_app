@@ -28,47 +28,92 @@ class CLoaders {
   }
 
   static successSnackBar({required title, message = '', duration = 3}) {
-    Get.snackbar(
-      title,
-      message,
-      isDismissible: true,
-      shouldIconPulse: true,
-      colorText: Colors.white,
-      backgroundColor: const Color.fromARGB(255, 92, 172, 105),
-      snackPosition: SnackPosition.BOTTOM,
-      duration: Duration(seconds: duration),
-      margin: const EdgeInsets.all(10),
-      icon: const Icon(Iconsax.check, color: CColors.white),
+    final context = Get.context;
+    if (context == null) return;
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        backgroundColor: const Color.fromARGB(255, 92, 172, 105),
+        duration: Duration(seconds: duration),
+        behavior: SnackBarBehavior.floating,
+        margin: const EdgeInsets.all(10),
+        content: Row(
+          children: [
+            const Icon(Iconsax.check, color: CColors.white),
+            const SizedBox(width: 12),
+            Expanded(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('$title', style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                  if (message.toString().isNotEmpty)
+                    Text('$message', style: const TextStyle(color: Colors.white)),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 
   static warningSnackBar({required title, message = ''}) {
-    Get.snackbar(
-      title,
-      message,
-      isDismissible: true,
-      shouldIconPulse: true,
-      colorText: CColors.white,
-      backgroundColor: Colors.orange,
-      snackPosition: SnackPosition.BOTTOM,
-      duration: const Duration(seconds: 3),
-      margin: const EdgeInsets.all(20),
-      icon: const Icon(Iconsax.warning_2, color: CColors.white),
+    final context = Get.context;
+    if (context == null) return;
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        backgroundColor: Colors.orange,
+        duration: const Duration(seconds: 3),
+        behavior: SnackBarBehavior.floating,
+        margin: const EdgeInsets.all(10),
+        content: Row(
+          children: [
+            const Icon(Iconsax.warning_2, color: CColors.white),
+            const SizedBox(width: 12),
+            Expanded(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('$title', style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                  if (message.toString().isNotEmpty)
+                    Text('$message', style: const TextStyle(color: Colors.white)),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 
   static errorSnackBar({required title, message = ''}) {
-    Get.snackbar(
-      title,
-      message,
-      isDismissible: true,
-      shouldIconPulse: true,
-      colorText: CColors.white,
-      backgroundColor: Colors.red.shade600,
-      snackPosition: SnackPosition.BOTTOM,
-      duration: const Duration(seconds: 3),
-      margin: const EdgeInsets.all(20),
-      icon: const Icon(Iconsax.warning_2, color: CColors.white),
+    final context = Get.context;
+    if (context == null) return;
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        backgroundColor: Colors.red.shade600,
+        duration: const Duration(seconds: 3),
+        behavior: SnackBarBehavior.floating,
+        margin: const EdgeInsets.all(10),
+        content: Row(
+          children: [
+            const Icon(Iconsax.warning_2, color: CColors.white),
+            const SizedBox(width: 12),
+            Expanded(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('$title', style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                  if (message.toString().isNotEmpty)
+                    Text('$message', style: const TextStyle(color: Colors.white)),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

@@ -1,0 +1,139 @@
+# Tatyassar (تيسّر)
+
+**Intelligent Decision Support System for Stress Management Through Personalized Therapeutic Interventions**
+
+Tatyassar is a mobile application that provides university students with an accessible, chat-based interface for early psychological support. The app connects to an AI backend (IDSS) that detects emotional cues from student messages and generates personalized, empathetic therapeutic responses grounded in CBT and APA clinical guidelines.
+
+---
+
+## Project Structure
+
+```
+tatyassar/
+├── lib/
+│   ├── main.dart                        # App entry point
+│   ├── app.dart                         # GetMaterialApp setup
+│   ├── navigation_menu.dart             # Bottom nav (Chat / Profile)
+│   ├── firebase_options.dart            # Firebase configuration
+│   ├── bindings/
+│   │   └── general_bindings.dart        # GetX dependency injection
+│   ├── routes/
+│   │   ├── routes.dart                  # Route name constants
+│   │   └── app_routes.dart              # GetX page routes
+│   ├── features/
+│   │   ├── authentication/              # Login, signup, onboarding, password reset
+│   │   │   ├── controllers/
+│   │   │   ├── models/
+│   │   │   └── screens/
+│   │   ├── chat/                        # Chat interface (IDSS frontend)
+│   │   │   └── screens/
+│   │   │       ├── chat_screen.dart
+│   │   │       └── widgets/
+│   │   │           ├── bot_message.dart
+│   │   │           ├── chat_appbar.dart
+│   │   │           ├── typing_indicator.dart
+│   │   │           └── user_message.dart
+│   │   └── personalization/             # User profile and settings
+│   │       ├── controllers/
+│   │       ├── models/
+│   │       └── screens/
+│   ├── common/
+│   │   ├── images/                      # Reusable image widgets
+│   │   ├── styles/                      # Spacing and shadow styles
+│   │   └── widgets/                     # Shared UI components
+│   ├── data/
+│   │   └── repositories/
+│   │       ├── authentication/          # Firebase Auth repository
+│   │       └── user/                    # Firestore user repository
+│   └── utils/
+│       ├── constants/                   # Colors, sizes, strings, enums
+│       ├── exceptions/                  # Firebase and platform exceptions
+│       ├── helpers/                     # Helper and utility functions
+│       ├── loaders/                     # Loading animations
+│       ├── popups/                      # Snackbars and loaders
+│       ├── theme/                       # Light/dark theme definitions
+│       └── validators/                  # Form validation
+├── assets/
+│   ├── fonts/                           # Poppins font family
+│   ├── logos/                           # App logos (light/dark)
+│   └── images/
+│       ├── on_boarding_images/          # Onboarding screen illustrations
+│       ├── content/                     # Default profile image
+│       └── animations/                  # Lottie and GIF animations
+├── android/
+├── ios/
+└── pubspec.yaml
+```
+
+---
+
+## Architecture
+
+### Frontend — Flutter (this repo)
+
+| Layer | Details |
+|---|---|
+| UI Framework | Flutter (cross-platform: Android + iOS) |
+| State Management | GetX |
+| Authentication | Firebase Auth (email/password + Google Sign-In) |
+| Storage | Firebase Firestore (chat history, user profiles) |
+| Navigation | GetX named routes |
+
+### Backend — IDSS (Python)
+
+The IDSS is the intelligence layer that processes student messages and returns therapeutic responses. It runs independently and is called via HTTP API.
+
+| Component | Details |
+|---|---|
+| Preprocessing | Text normalization + paraphrasing via Phi-3 Mini |
+| Embedding | all-MiniLM-L6-v2 (384-dim sentence vectors) |
+| Cue Classification | Multi-label MLP (anxiety, avoidance, self-blame, withdrawal, etc.) |
+| Knowledge Base | CBT/APA-grounded rules (solutions.json) |
+| Response Generation | Phi-3 Mini 128K Instruct (local LLM) |
+| Self-Learning | SEAL-inspired mechanism — retrains every 10 validated examples |
+| Crisis Detection | Keyword/pattern safety layer |
+| Memory | Firestore (persistent chat) + in-memory cue context |
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- Flutter SDK `>=3.1.5`
+- Firebase project with Authentication and Firestore enabled
+- `google-services.json` (Android) and `GoogleService-Info.plist` (iOS) placed in the appropriate platform directories
+
+### Setup
+
+```bash
+# Install dependencies
+flutter pub get
+
+# Run on device/emulator
+flutter run
+```
+
+### Firebase Configuration
+
+The app expects a Firestore collection structure:
+
+```
+Users/
+  {uid}/
+    chats/
+      {messageId}: { text, role, timestamp }
+```
+
+---
+
+## Team
+
+| Name | ID |
+|---|---|
+| Faisal Alshalan | 202153490 |
+| Nawaf Alshammari | 202167350 |
+
+**Course:** ICS487 — Intelligent Systems  
+**Institution:** King Fahd University of Petroleum and Minerals (KFUPM)  
+**Date:** December 2025

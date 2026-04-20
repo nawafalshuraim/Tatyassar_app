@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:loom_store/features/authentication/controllers/login/login_controller.dart';
-import 'package:loom_store/features/authentication/screens/passward_configuration/forget_passward.dart';
-import 'package:loom_store/features/authentication/screens/signup/signup.dart';
-import 'package:loom_store/utils/constants/sizes.dart';
-import 'package:loom_store/utils/constants/text_strings.dart';
-import 'package:loom_store/utils/validators/validation.dart';
+import 'package:tatyassar/features/authentication/controllers/login/login_controller.dart';
+import 'package:tatyassar/features/authentication/screens/passward_configuration/forget_passward.dart';
+import 'package:tatyassar/features/authentication/screens/signup/signup.dart';
+import 'package:tatyassar/utils/constants/sizes.dart';
+import 'package:tatyassar/utils/constants/text_strings.dart';
+import 'package:tatyassar/utils/validators/validation.dart';
 
 class CLoginForm extends StatelessWidget {
   const CLoginForm({

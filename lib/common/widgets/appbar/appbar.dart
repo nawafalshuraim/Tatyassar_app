@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:get/get.dart';
-import 'package:loom_store/utils/constants/colors.dart';
-import 'package:loom_store/utils/constants/sizes.dart';
-import 'package:loom_store/utils/device/device_utility.dart';
-import 'package:loom_store/utils/helpers/helper_functions.dart';
+import 'package:tatyassar/utils/constants/colors.dart';
+import 'package:tatyassar/utils/constants/sizes.dart';
+import 'package:tatyassar/utils/device/device_utility.dart';
+import 'package:tatyassar/utils/helpers/helper_functions.dart';
 
 class CAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CAppBar({
@@ -35,7 +34,7 @@ class CAppBar extends StatelessWidget implements PreferredSizeWidget {
         automaticallyImplyLeading: false,
         leading: showBackArrow
             ? IconButton(
-                onPressed: () => Get.back(),
+                onPressed: () => Navigator.of(context).pop(),
                 icon: Icon(
                   Iconsax.arrow_left,
                   color: dark ? CColors.white : CColors.dark, 

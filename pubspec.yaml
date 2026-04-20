@@ -1,5 +1,5 @@
-name: loom_store
-description: A maintenance app.
+name: tatyassar
+description: Tatyassar — Intelligent Decision Support System for stress management through personalized therapeutic interventions.
 
 publish_to: 'none'
 version: 1.0.0+1
@@ -7,12 +7,11 @@ version: 1.0.0+1
 environment:
   sdk: '>=3.1.5 <4.0.0'
 
-#--------------- PACKAGES ------------------#
 dependencies:
   flutter:
     sdk: flutter
 
-  # Utility Packages
+  # Utilities
   http: ^1.2.1
   intl: ^0.20.2
   logger: ^2.2.0
@@ -21,48 +20,23 @@ dependencies:
   smooth_page_indicator: ^1.1.0
   connectivity_plus: ^6.0.3
   lottie: ^3.1.0
-  
 
   # Icons
   iconsax: ^0.0.8
   cupertino_icons: ^1.0.6
 
-  # Saudi Riyal Symbol
- 
-
-
   # State Management
   get: ^4.6.6
   get_storage: ^2.1.1
-
-  # Product Specific
-  readmore: ^3.0.0
-  carousel_slider: ^5.1.1
-  flutter_rating_bar: ^4.0.1
-  capped_progress_indicator: ^0.0.2
-  dropdown_button2: ^2.3.9
-
 
   # Firebase
   firebase_core: ^3.15.1
   firebase_auth: ^5.6.2
   cloud_firestore: ^5.6.11
   firebase_storage: ^12.4.9
-  change_app_package_name: ^1.5.0
   google_sign_in: ^6.2.1
   shimmer: ^2.0.0
   image_picker: ^1.1.2
-  cached_network_image: ^3.4.1
-
-  # Google
-  google_maps_flutter: ^2.6.0
-  geolocator: ^11.0.0
-  geocoding: ^2.1.0
-  permission_handler: ^11.3.0
-
-  
-
-#--------------- ./ PACKAGES END ------------------#
 
 dev_dependencies:
   flutter_test:
@@ -72,20 +46,12 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 
-  #--------------- LOCAL ASSETS ------------------#
   assets:
     - assets/logos/
     - assets/images/content/
-    - assets/images/banners/
-    - assets/images/reviews/
-    - assets/images/products/
-    - assets/icons/categories/
-    - assets/icons/currency/
     - assets/images/animations/
-    - assets/icons/payment_methods/
     - assets/images/on_boarding_images/
 
-  #--------------- LOCAL FONTS ------------------#
   fonts:
     - family: Poppins
       fonts:
@@ -104,7 +70,3 @@ flutter:
           weight: 600
         - asset: assets/fonts/Poppins-Bold.ttf
           weight: 800
-
-
-
- 

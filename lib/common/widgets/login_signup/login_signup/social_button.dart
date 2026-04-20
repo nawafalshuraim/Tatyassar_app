@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-import 'package:loom_store/features/authentication/controllers/login/login_controller.dart';
-import 'package:loom_store/utils/constants/colors.dart';
-import 'package:loom_store/utils/constants/image_strings.dart';
-import 'package:loom_store/utils/constants/sizes.dart';
+import 'package:tatyassar/features/authentication/controllers/login/login_controller.dart';
+import 'package:tatyassar/utils/constants/colors.dart';
+import 'package:tatyassar/utils/constants/image_strings.dart';
+import 'package:tatyassar/utils/constants/sizes.dart';
 
 class CSocialButton extends StatelessWidget {
   const CSocialButton ({

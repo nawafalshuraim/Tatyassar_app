@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_utils/get_utils.dart';
-import 'package:loom_store/common/widgets/appbar/appbar.dart';
-import 'package:loom_store/common/widgets/login_signup/login_signup/social_button.dart';
-import 'package:loom_store/common/widgets/login_signup/login_signup/signup_form_divider.dart';
-import 'package:loom_store/features/authentication/screens/signup/widgets/signup_form.dart';
-import 'package:loom_store/utils/constants/sizes.dart';
-import 'package:loom_store/utils/constants/text_strings.dart';
+import 'package:tatyassar/common/widgets/appbar/appbar.dart';
+import 'package:tatyassar/common/widgets/login_signup/login_signup/social_button.dart';
+import 'package:tatyassar/common/widgets/login_signup/login_signup/signup_form_divider.dart';
+import 'package:tatyassar/features/authentication/screens/signup/widgets/signup_form.dart';
+import 'package:tatyassar/utils/constants/sizes.dart';
+import 'package:tatyassar/utils/constants/text_strings.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});

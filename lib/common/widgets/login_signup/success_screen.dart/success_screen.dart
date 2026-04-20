@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:loom_store/common/styles/spacing_styles.dart';
-import 'package:loom_store/utils/constants/sizes.dart';
-import 'package:loom_store/utils/constants/text_strings.dart';
-import 'package:loom_store/utils/helpers/helper_functions.dart';
+import 'package:tatyassar/common/styles/spacing_styles.dart';
+import 'package:tatyassar/utils/constants/sizes.dart';
+import 'package:tatyassar/utils/constants/text_strings.dart';
+import 'package:tatyassar/utils/helpers/helper_functions.dart';
 
 class SuccessScreen extends StatelessWidget {
   const SuccessScreen({super.key, required this.image, required this.title, required this.subtitle, required this.onPressed});
@@ -20,7 +20,11 @@ class SuccessScreen extends StatelessWidget {
             children: [
 
               //image
-              Image(image: AssetImage(image), width: CHelperFunctions.screenWidth() * 0.6),
+              Image(
+                image: AssetImage(image),
+                width: CHelperFunctions.screenWidth() * 0.6,
+                errorBuilder: (context, error, stackTrace) => const SizedBox.shrink(),
+              ),
               const SizedBox(height: CSizes.spaceBtwSections),
 
               //title and subtitle

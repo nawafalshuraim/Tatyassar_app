@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:loom_store/utils/constants/sizes.dart';
-import 'package:loom_store/utils/helpers/helper_functions.dart';
+import 'package:tatyassar/utils/constants/sizes.dart';
+import 'package:tatyassar/utils/helpers/helper_functions.dart';
 
 class OnBoardingPage extends StatelessWidget {
   const OnBoardingPage({
@@ -22,8 +22,8 @@ class OnBoardingPage extends StatelessWidget {
             width: CHelperFunctions.screenWidth() * 0.8,
             height: CHelperFunctions.screenHeight() * 0.6,
             image: AssetImage(image),
-      
-            ),
+            errorBuilder: (context, error, stackTrace) => const SizedBox.shrink(),
+          ),
             Text(
               title, 
               style: Theme.of(context).textTheme.headlineMedium, 

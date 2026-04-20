@@ -1,12 +1,12 @@
 import "package:flutter/widgets.dart";
 import "package:get/get.dart";
-import "package:loom_store/data/repositories/user%20/user_repository.dart";
-import "package:loom_store/features/personalization/controllers/user_controller.dart";
-import "package:loom_store/navigation_menu.dart";
-import "package:loom_store/utils/constants/image_strings.dart";
-import "package:loom_store/utils/helpers/network_manager.dart";
-import "package:loom_store/utils/popups/full_screen_loader.dart";
-import "package:loom_store/utils/popups/loaders.dart";
+import "package:tatyassar/data/repositories/user/user_repository.dart";
+import "package:tatyassar/features/personalization/controllers/user_controller.dart";
+import "package:tatyassar/navigation_menu.dart";
+import "package:tatyassar/utils/constants/image_strings.dart";
+import "package:tatyassar/utils/helpers/network_manager.dart";
+import "package:tatyassar/utils/popups/full_screen_loader.dart";
+import "package:tatyassar/utils/popups/loaders.dart";
 
 /// Controller to manage user-related functionality.
 class UpdateNameController extends GetxController {
@@ -64,20 +64,20 @@ class UpdateNameController extends GetxController {
       // Remove Loader
       CFullScreenLoader.stopLoading();
 
-      // Show Success Message
-      CLoaders.successSnackBar(
-          title: 'Done', message: 'Your Name has been updated.');
-
-      // Move to previous screen.
-      //+ 
+      // Fetch & navigate first — overlay from the dialog is gone, show
+      // the snackbar only after the new route's overlay is ready.
       await userController.fetchUserRecord();
-      Get.off(() => const NavigationMenu());
+      Get.offAll(() => const NavigationMenu());
 
-      
-      
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        CLoaders.successSnackBar(
+            title: 'Done', message: 'Your Name has been updated.');
+      });
     } catch (e) {
       CFullScreenLoader.stopLoading();
-      CLoaders.errorSnackBar(title: '!', message: e.toString());
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        CLoaders.errorSnackBar(title: 'Error', message: e.toString());
+      });
     }
   }
 }

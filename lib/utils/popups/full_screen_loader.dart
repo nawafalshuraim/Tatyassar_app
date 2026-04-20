@@ -23,8 +23,8 @@ class CFullScreenLoader {
           width: double.infinity,
           height: double.infinity,
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const SizedBox(height: 250), // Adjust the spacing as needed
               CAnimationLoaderWidget(text: text, animation: animation),
             ],
           ),

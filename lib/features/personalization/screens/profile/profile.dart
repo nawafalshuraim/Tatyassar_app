@@ -3,14 +3,13 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:loom_store/common/widgets/appbar/appbar.dart';
-import 'package:loom_store/common/widgets/shimmer/shimmer.dart';
-import 'package:loom_store/common/widgets/texts/section_heading.dart';
-import 'package:loom_store/features/personalization/controllers/user_controller.dart';
-import 'package:loom_store/features/personalization/screens/profile/widgets/change_name.dart';
-import 'package:loom_store/features/personalization/screens/profile/widgets/profile_menu.dart';
-import 'package:loom_store/utils/constants/image_strings.dart';
-import 'package:loom_store/utils/constants/sizes.dart';
+import 'package:tatyassar/common/widgets/appbar/appbar.dart';
+import 'package:tatyassar/common/widgets/shimmer/shimmer.dart';
+import 'package:tatyassar/common/widgets/texts/section_heading.dart';
+import 'package:tatyassar/features/personalization/controllers/user_controller.dart';
+import 'package:tatyassar/features/personalization/screens/profile/widgets/change_name.dart';
+import 'package:tatyassar/features/personalization/screens/profile/widgets/profile_menu.dart';
+import 'package:tatyassar/utils/constants/sizes.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -55,8 +54,15 @@ class ProfileScreen extends StatelessWidget {
                       return CircleAvatar(
                         radius: 40,
                         backgroundColor: Colors.grey.shade200,
-                        backgroundImage: MemoryImage(
-                          base64Decode(picture),
+                        child: ClipOval(
+                          child: Image.memory(
+                            base64Decode(picture),
+                            width: 80,
+                            height: 80,
+                            fit: BoxFit.cover,
+                            errorBuilder: (context, error, stackTrace) =>
+                                const Icon(Icons.person, size: 40, color: Colors.grey),
+                          ),
                         ),
                       );
                     }),

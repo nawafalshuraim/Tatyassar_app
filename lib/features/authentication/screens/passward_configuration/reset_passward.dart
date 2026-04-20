@@ -2,12 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
-import 'package:loom_store/features/authentication/controllers/forget_password/forget_password_controller.dart';
-import 'package:loom_store/features/authentication/screens/login/login.dart';
-import 'package:loom_store/utils/constants/image_strings.dart';
-import 'package:loom_store/utils/constants/sizes.dart';
-import 'package:loom_store/utils/constants/text_strings.dart';
-import 'package:loom_store/utils/helpers/helper_functions.dart';
+import 'package:tatyassar/features/authentication/controllers/forget_password/forget_password_controller.dart';
+import 'package:tatyassar/features/authentication/screens/login/login.dart';
+import 'package:tatyassar/utils/constants/image_strings.dart';
+import 'package:tatyassar/utils/constants/sizes.dart';
+import 'package:tatyassar/utils/constants/text_strings.dart';
+import 'package:tatyassar/utils/helpers/helper_functions.dart';
 
 
 class ResetPassward extends StatelessWidget {
@@ -30,7 +30,11 @@ class ResetPassward extends StatelessWidget {
           child: Column(
             children: [
               // image with 0.6 of the screen width
-              Image(image: AssetImage(CImages.deliveredEmailIllustration), width: CHelperFunctions.screenWidth() * 0.6),
+              Image(
+                image: AssetImage(CImages.deliveredEmailIllustration),
+                width: CHelperFunctions.screenWidth() * 0.6,
+                errorBuilder: (context, error, stackTrace) => const SizedBox.shrink(),
+              ),
               const SizedBox(height: CSizes.spaceBtwSections),
 
               // title and subtitle

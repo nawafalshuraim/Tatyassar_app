@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:loom_store/features/authentication/screens/login/login.dart';
-import 'package:loom_store/utils/constants/colors.dart';
-import 'package:loom_store/utils/constants/sizes.dart';
-import 'package:loom_store/utils/device/device_utility.dart';
+import 'package:tatyassar/features/authentication/screens/login/login.dart';
+import 'package:tatyassar/utils/constants/colors.dart';
+import 'package:tatyassar/utils/constants/sizes.dart';
+import 'package:tatyassar/utils/device/device_utility.dart';
 
 class OnboardingSkip extends StatelessWidget {
   const OnboardingSkip({super.key});

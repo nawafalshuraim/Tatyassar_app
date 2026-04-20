@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:loom_store/utils/formatters/formatter.dart';
+import 'package:tatyassar/utils/formatters/formatter.dart';
 
 class UserModel {
   /// Keep some values final which you do not want to update

@@ -1,12 +1,12 @@
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:loom_store/data/repositories/authentication/authentication_repository.dart';
-import 'package:loom_store/features/personalization/controllers/user_controller.dart';
-import 'package:loom_store/utils/constants/image_strings.dart';
-import 'package:loom_store/utils/helpers/network_manager.dart';
-import 'package:loom_store/utils/popups/full_screen_loader.dart';
-import 'package:loom_store/utils/popups/loaders.dart';
+import 'package:tatyassar/data/repositories/authentication/authentication_repository.dart';
+import 'package:tatyassar/features/personalization/controllers/user_controller.dart';
+import 'package:tatyassar/utils/constants/image_strings.dart';
+import 'package:tatyassar/utils/helpers/network_manager.dart';
+import 'package:tatyassar/utils/popups/full_screen_loader.dart';
+import 'package:tatyassar/utils/popups/loaders.dart';
 
 
 class LoginController extends GetxController {
@@ -18,7 +18,6 @@ class LoginController extends GetxController {
   final rememberMe = true.obs;
   final localStorage = GetStorage();
   GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
-  final userController = Get.put(UserController());
 
   @override
   void onInit() {
@@ -95,7 +94,8 @@ class LoginController extends GetxController {
       final userCredentials =
           await AuthenticationRepository.instance.signInWithGoogle();
 
-      // Save user record (from your UserController)
+      // Save user record — UserController is created here, after auth succeeds
+      final userController = Get.put(UserController());
       await userController.saveUserRecord(userCredentials);
 
       // Stop loader and redirect

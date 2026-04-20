@@ -4,17 +4,17 @@ import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:loom_store/data/repositories/user%20/user_repository.dart';
-import 'package:loom_store/features/authentication/screens/login/login.dart';
-import 'package:loom_store/features/authentication/screens/onboarding/onboarding.dart';
+import 'package:tatyassar/data/repositories/user/user_repository.dart';
+import 'package:tatyassar/features/authentication/screens/login/login.dart';
+import 'package:tatyassar/features/authentication/screens/onboarding/onboarding.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:loom_store/features/authentication/screens/signup/verify_email.dart';
-import 'package:loom_store/navigation_menu.dart';
-import 'package:loom_store/utils/exceptions/firebase_auth_exceptions.dart';
-import 'package:loom_store/utils/exceptions/firebase_exceptions.dart';
-import 'package:loom_store/utils/exceptions/format_exceptions.dart';
-import 'package:loom_store/utils/exceptions/platform_exceptions.dart';
-import 'package:loom_store/utils/local_storage/storage_utility.dart';
+import 'package:tatyassar/features/authentication/screens/signup/verify_email.dart';
+import 'package:tatyassar/navigation_menu.dart';
+import 'package:tatyassar/utils/exceptions/firebase_auth_exceptions.dart';
+import 'package:tatyassar/utils/exceptions/firebase_exceptions.dart';
+import 'package:tatyassar/utils/exceptions/format_exceptions.dart';
+import 'package:tatyassar/utils/exceptions/platform_exceptions.dart';
+import 'package:tatyassar/utils/local_storage/storage_utility.dart';
 
 class AuthenticationRepository extends GetxController {
   static AuthenticationRepository get instance => Get.find();
@@ -157,20 +157,20 @@ class AuthenticationRepository extends GetxController {
   /// [GoogleAuthentication] - GOOGLE
   Future<UserCredential?> signInWithGoogle() async {
     try {
-      // Trigger Google authentication flow
-      final GoogleSignInAccount? userAccount = await GoogleSignIn().signIn();
+      if (kIsWeb) {
+        // On Flutter Web use Firebase's signInWithPopup — no extra config needed.
+        final GoogleAuthProvider googleProvider = GoogleAuthProvider();
+        return await _auth.signInWithPopup(googleProvider);
+      }
 
-      // Obtain auth details
+      // Mobile: use the google_sign_in package
+      final GoogleSignInAccount? userAccount = await GoogleSignIn().signIn();
       final GoogleSignInAuthentication? googleAuth =
           await userAccount?.authentication;
-
-      // Create Firebase credential
       final credentials = GoogleAuthProvider.credential(
         accessToken: googleAuth?.accessToken,
         idToken: googleAuth?.idToken,
       );
-
-      // Sign in with Firebase
       return await _auth.signInWithCredential(credentials);
     } on FirebaseAuthException catch (e) {
       throw CFirebaseAuthException(e.code).message;
@@ -191,7 +191,12 @@ class AuthenticationRepository extends GetxController {
   /// [LogoutUser] - Valid for any authentication.
   Future<void> logout() async {
     try {
-      await GoogleSignIn().signOut();
+      // GoogleSignIn().signOut() is mobile-only and best-effort
+      if (!kIsWeb) {
+        try {
+          await GoogleSignIn().signOut();
+        } catch (_) {}
+      }
       await FirebaseAuth.instance.signOut();
       Get.offAll(() => const LoginScreen());
     } on FirebaseAuthException catch (e) {

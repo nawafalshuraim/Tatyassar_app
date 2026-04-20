@@ -5,16 +5,16 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:loom_store/data/repositories/authentication/authentication_repository.dart';
-import 'package:loom_store/data/repositories/user%20/user_repository.dart';
-import 'package:loom_store/features/authentication/models/user_model.dart';
-import 'package:loom_store/features/authentication/screens/login/login.dart';
-import 'package:loom_store/features/personalization/screens/profile/widgets/re_authenticate_user_login_form.dart';
-import 'package:loom_store/utils/constants/image_strings.dart';
-import 'package:loom_store/utils/constants/sizes.dart';
-import 'package:loom_store/utils/helpers/network_manager.dart';
-import 'package:loom_store/utils/popups/full_screen_loader.dart';
-import 'package:loom_store/utils/popups/loaders.dart';
+import 'package:tatyassar/data/repositories/authentication/authentication_repository.dart';
+import 'package:tatyassar/data/repositories/user/user_repository.dart';
+import 'package:tatyassar/features/authentication/models/user_model.dart';
+import 'package:tatyassar/features/authentication/screens/login/login.dart';
+import 'package:tatyassar/features/personalization/screens/profile/widgets/re_authenticate_user_login_form.dart';
+import 'package:tatyassar/utils/constants/image_strings.dart';
+import 'package:tatyassar/utils/constants/sizes.dart';
+import 'package:tatyassar/utils/helpers/network_manager.dart';
+import 'package:tatyassar/utils/popups/full_screen_loader.dart';
+import 'package:tatyassar/utils/popups/loaders.dart';
 
 class UserController extends GetxController {
   static UserController get instance => Get.find();
@@ -259,15 +259,19 @@ class UserController extends GetxController {
       user.value.profilePicture = base64Image;
       user.refresh();
 
-      CLoaders.successSnackBar(
-        title: 'Done',
-        message: 'Your profile image has been updated!',
-      );
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        CLoaders.successSnackBar(
+          title: 'Done',
+          message: 'Your profile image has been updated!',
+        );
+      });
     } catch (e) {
-      CLoaders.errorSnackBar(
-        title: 'Error',
-        message: 'Something went wrong: $e',
-      );
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        CLoaders.errorSnackBar(
+          title: 'Error',
+          message: 'Something went wrong: $e',
+        );
+      });
     } finally {
       imageUploading.value = false; // stop loader
     }

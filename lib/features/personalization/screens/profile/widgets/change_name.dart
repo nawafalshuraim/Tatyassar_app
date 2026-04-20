@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/get_instance.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:loom_store/common/widgets/appbar/appbar.dart';
-import 'package:loom_store/features/personalization/screens/profile/widgets/update_name.dart';
-import 'package:loom_store/utils/constants/sizes.dart';
-import 'package:loom_store/utils/constants/text_strings.dart';
-import 'package:loom_store/utils/validators/validation.dart';
+import 'package:tatyassar/common/widgets/appbar/appbar.dart';
+import 'package:tatyassar/features/personalization/screens/profile/widgets/update_name.dart';
+import 'package:tatyassar/utils/constants/sizes.dart';
+import 'package:tatyassar/utils/constants/text_strings.dart';
+import 'package:tatyassar/utils/validators/validation.dart';
 
 class ChangeName extends StatelessWidget {
   const ChangeName({super.key});

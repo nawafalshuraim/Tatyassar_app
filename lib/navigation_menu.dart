@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:loom_store/features/personalization/screens/settings/settings.dart';
-import 'package:loom_store/features/shop/screens/home/home.dart';
-import 'package:loom_store/utils/helpers/helper_functions.dart';
+import 'package:tatyassar/features/personalization/screens/settings/settings.dart';
+import 'package:tatyassar/features/chat/screens/chat_screen.dart';
 
 class NavigationMenu extends StatelessWidget {
   const NavigationMenu({super.key});
@@ -11,7 +10,6 @@ class NavigationMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(NavigationController());
-    final dark = CHelperFunctions.isDarkMode(context);
 
     return Scaffold(
       bottomNavigationBar: Obx(
@@ -20,10 +18,8 @@ class NavigationMenu extends StatelessWidget {
           elevation: 0,
           selectedIndex: controller.selectedIndex.value,
           onDestinationSelected: (index) => controller.selectedIndex.value = index,
-          backgroundColor: dark ? Colors.black : Colors.white,
-          indicatorColor: dark
-              ? const Color.fromARGB(255, 113, 131, 171).withOpacity(0.2)
-              : const Color.fromARGB(255, 113, 131, 171).withOpacity(0.2),
+          backgroundColor: Theme.of(context).colorScheme.surface,
+          indicatorColor: const Color.fromARGB(255, 113, 131, 171).withValues(alpha: 0.2),
 
           destinations: const [
             NavigationDestination(icon: Icon(Iconsax.message), label: 'Chat'),

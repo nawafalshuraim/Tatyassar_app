@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/get_navigation.dart';
-import 'package:loom_store/bindings/general_bindings.dart';
-import 'package:loom_store/features/shop/screens/home/home.dart';
-import 'package:loom_store/routs/app_routs.dart';
-import 'package:loom_store/utils/theme/theme.dart';
+import 'package:tatyassar/bindings/general_bindings.dart';
+import 'package:tatyassar/features/chat/screens/chat_screen.dart';
+import 'package:tatyassar/routes/app_routes.dart';
+import 'package:tatyassar/utils/theme/theme.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -16,12 +16,7 @@ class App extends StatelessWidget {
       darkTheme: CAppTheme.darkTheme,
       initialBinding: GeneralBindings(),
       getPages: AppRoutes.pages,
-      // Circular Progress Indicator meanwhile authentication repository is deciding to show the relevent screen.
-      // home: const Scaffold(
-      //     backgroundColor: CColors.primary,
-      //     body: Center(child: CircularProgressIndicator(color: Colors.white))),
       home: const ChatScreen(),
-
     );
   }
 }

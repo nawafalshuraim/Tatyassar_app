@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:loom_store/utils/constants/sizes.dart';
+import 'package:tatyassar/utils/constants/sizes.dart';
 
 class CProfileMenu extends StatelessWidget {
   const CProfileMenu({

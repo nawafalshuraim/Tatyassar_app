@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:loom_store/utils/constants/image_strings.dart';
-import 'package:loom_store/utils/constants/sizes.dart';
-import 'package:loom_store/utils/constants/text_strings.dart';
-import 'package:loom_store/utils/helpers/helper_functions.dart';
+import 'package:tatyassar/utils/constants/image_strings.dart';
+import 'package:tatyassar/utils/constants/sizes.dart';
+import 'package:tatyassar/utils/constants/text_strings.dart';
+import 'package:tatyassar/utils/helpers/helper_functions.dart';
 
 class CLoginHeader extends StatelessWidget {
   const CLoginHeader({super.key});
@@ -26,6 +26,7 @@ class CLoginHeader extends StatelessWidget {
               child: Image.asset(
                 dark ? CImages.lightAppLogo : CImages.darkAppLogo,
                 fit: BoxFit.contain,
+                errorBuilder: (context, error, stackTrace) => const SizedBox.shrink(),
               ),
             ),
 
