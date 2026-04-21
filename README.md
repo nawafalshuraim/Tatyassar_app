@@ -96,6 +96,51 @@ The IDSS is the intelligence layer that processes student messages and returns t
 
 ---
 
+## Screenshots
+
+### Splash & Onboarding
+
+<p float="left">
+  <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 16.43.37.png" width="18%" />
+  <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 16.57.01.png" width="18%" />
+  <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 16.57.04.png" width="18%" />
+  <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 16.57.08.png" width="18%" />
+</p>
+
+> Splash screen → Understand Your Stress → Personalized Coping Strategies → Mindfulness Companion
+
+### Authentication
+
+<p float="left">
+  <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 16.59.58.png" width="18%" />
+  <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 16.57.39.png" width="18%" />
+  <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 16.58.57.png" width="18%" />
+  <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 16.58.17.png" width="18%" />
+</p>
+
+> Sign In → Sign Up → Forget Password → Password Reset Email Sent
+
+### Chat
+
+<p float="left">
+  <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 18.17.03.png" width="18%" />
+  <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 18.31.24.png" width="18%" />
+</p>
+
+> AI therapeutic response · Crisis detection
+
+### Profile
+
+<p float="left">
+  <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 17.02.09.png" width="18%" />
+  <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 17.02.11.png" width="18%" />
+  <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 17.02.38.png" width="18%" />
+</p>
+
+> Account overview · Profile settings · Edit name
+
+---
+
 ## Getting Started
 
 ### Prerequisites
