@@ -1,4 +1,4 @@
-# Tatyassar (تيسّر)
+# Tatyassar (تتيسّر)
 
 **Intelligent Decision Support System for Stress Management Through Personalized Therapeutic Interventions**
 
