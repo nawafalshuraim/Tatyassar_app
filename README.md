@@ -123,11 +123,15 @@ The IDSS is the intelligence layer that processes student messages and returns t
 ### Chat
 
 <p float="left">
+  <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 17.02.04.png" width="18%" />
+  <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 17.03.44.png" width="18%" />
   <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 18.17.03.png" width="18%" />
+  <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 18.30.03.png" width="18%" />
   <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 18.31.24.png" width="18%" />
+  <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 17.13.09.png" width="18%" />
 </p>
 
-> AI therapeutic response · Crisis detection
+> Empty chat · Typing input · AI therapeutic response · CBT follow-up · Full conversation · Crisis detection
 
 ### Profile
 
@@ -135,9 +139,10 @@ The IDSS is the intelligence layer that processes student messages and returns t
   <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 17.02.09.png" width="18%" />
   <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 17.02.11.png" width="18%" />
   <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 17.02.38.png" width="18%" />
+  <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 18.31.27.png" width="18%" />
 </p>
 
-> Account overview · Profile settings · Edit name
+> Account overview · Profile settings · Edit name · Account with logout
 
 ---
 

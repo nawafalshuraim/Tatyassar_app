@@ -2,6 +2,8 @@ class CImages {
   // App Logos
   static const String darkAppLogo = "assets/logos/3dicons-bulb-dark.png";
   static const String lightAppLogo = "assets/logos/3dicons-bulb-light.png";
+  static const String sunColorLogo = "assets/logos/3dicons-sun-front-color.png";
+  static const String sunClayLogo = "assets/logos/3dicons-sun-front-clay.png";
 
   // Social
   static const String google = "assets/logos/google-icon.png";
