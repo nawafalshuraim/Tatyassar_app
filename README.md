@@ -100,11 +100,12 @@ The IDSS is the intelligence layer that processes student messages and returns t
 
 ### Splash & Onboarding
 
-<p float="left">
-  <img src="App_Screenshots/3dicons-sun-front-clay.png" width="18%" />
-  <img src="App_Screenshots/3dicons-sun-front-color.png" width="18%" />
-  <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 16.43.37.png" width="18%" />
-  <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 16.57.01.png" width="18%" />
+<p>
+  <span style="margin-right: 20px;">
+    <img src="App_Screenshots/3dicons-sun-front-clay.png" width="18%" />
+    <img src="App_Screenshots/3dicons-sun-front-color.png" width="18%" />
+  </span>
+
   <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 16.57.04.png" width="18%" />
   <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 16.57.08.png" width="18%" />
 </p>
