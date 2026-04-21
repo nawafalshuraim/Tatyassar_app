@@ -98,30 +98,48 @@ The IDSS is the intelligence layer that processes student messages and returns t
 
 ## Screenshots
 
-### Splash & Onboarding
+### Splash Screen
 
-<p>
-  <span style="margin-right: 20px;">
-    <img src="App_Screenshots/3dicons-sun-front-clay.png" width="18%" />
-    <img src="App_Screenshots/3dicons-sun-front-color.png" width="18%" />
-  </span>
+<p float="left">
+  <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 16.43.37.png" width="18%" />
+  <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 18.38.47.png" width="18%" />
+  <img src="App_Screenshots/3dicons-sun-front-clay.png" width="18%" />
+  <img src="App_Screenshots/3dicons-sun-front-color.png" width="18%" />
+</p>
 
+> Dark splash · Light splash · App icon (clay) · App icon (color)
+
+### Onboarding
+
+<p float="left">
+  <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 16.57.01.png" width="18%" />
   <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 16.57.04.png" width="18%" />
   <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 16.57.08.png" width="18%" />
 </p>
 
-> Splash screen → Understand Your Stress → Personalized Coping Strategies → Mindfulness Companion
+> Understand Your Stress (dark) · Personalized Coping Strategies (dark) · Mindfulness Companion (dark)
+
+<p float="left">
+  <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 18.32.17.png" width="18%" />
+  <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 18.32.30.png" width="18%" />
+  <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 18.32.34.png" width="18%" />
+</p>
+
+> Understand Your Stress (light) · Personalized Coping Strategies (light) · Mindfulness Companion (light)
 
 ### Authentication
 
 <p float="left">
   <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 16.59.58.png" width="18%" />
+  <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 18.32.08.png" width="18%" />
   <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 16.57.39.png" width="18%" />
+  <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 18.32.10.png" width="18%" />
   <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 16.58.57.png" width="18%" />
   <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 16.58.17.png" width="18%" />
+  <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 18.32.44.png" width="18%" />
 </p>
 
-> Sign In → Sign Up → Forget Password → Password Reset Email Sent
+> Sign In (dark) · Sign In (light) · Sign Up (dark) · Sign Up (light) · Forget Password · Password Reset Email Sent · Google Sign-In
 
 ### Chat
 
@@ -129,12 +147,14 @@ The IDSS is the intelligence layer that processes student messages and returns t
   <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 17.02.04.png" width="18%" />
   <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 17.03.44.png" width="18%" />
   <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 18.17.03.png" width="18%" />
+  <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 18.17.06.png" width="18%" />
   <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 18.30.03.png" width="18%" />
+  <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 18.30.46.png" width="18%" />
   <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 18.31.24.png" width="18%" />
   <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 17.13.09.png" width="18%" />
 </p>
 
-> Empty chat · Typing input · AI therapeutic response · CBT follow-up · Full conversation · Crisis detection
+> Empty chat · Typing input · AI therapeutic response · CBT follow-up · Full conversation · Crisis input · Extended conversation · Crisis detection
 
 ### Profile
 
@@ -143,9 +163,12 @@ The IDSS is the intelligence layer that processes student messages and returns t
   <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 17.02.11.png" width="18%" />
   <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 17.02.38.png" width="18%" />
   <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 18.31.27.png" width="18%" />
+  <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 18.31.45.png" width="18%" />
+  <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 18.31.52.png" width="18%" />
+  <img src="App_Screenshots/Simulator Screenshot - Iphone 16 Pro - 2025-12-15 at 18.31.55.png" width="18%" />
 </p>
 
-> Account overview · Profile settings · Edit name · Account with logout
+> Account overview · Profile settings · Edit name · Account with logout · Photo picker · Profile with custom photo · Delete account dialog
 
 ---
 
